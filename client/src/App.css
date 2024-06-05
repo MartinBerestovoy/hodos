@@ -1,44 +1,55 @@
-.App {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1em;
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif; /* Define la fuente para el cuerpo del documento */
+    background-color: #a09c9c; /* Define un color de fondo */
+    margin: 0; 
+    padding: 0;
 }
 
-form div + div {
-  margin-top: 1em;
+.App {
+    width: 50%; /* Define el ancho*/
+    margin: 50px auto; 
+    background-color: white; /* Define un color de fondo blanco */
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera alrededor del contenedor */
+}
+
+h1 {
+    text-align: center; /*centra el texto*/
+    color: #333; /*titulo*/
+}
+
+.form-group {
+    margin-bottom: 15px; /* Añade un margen inferior de 15px a cada grupo de formulario */
 }
 
 label {
-  display: block;
-  margin-bottom: .5em;
-  color: #333333;
+    display: block; /* Hace que los labels se comporten como bloques */
+    margin-bottom: 5px; /* Añade un margen inferior de 5px a los labels */
+    color: #333; /* Define el color del texto de los labels */
 }
 
 input, textarea {
-  border: 1px solid #CCCCCC;
-  font: 1em sans-serif;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-
-input:focus, textarea:focus {
-  border-color: rgb(91, 9, 245);
+    width: 100%; /* Hace que los campos de entrada y textarea ocupen el 100% del ancho disponible */
+    padding: 10px; /* Añade un padding interno de 10px */
+    border: 1px solid #ccc; /* Define un borde gris claro */
+    border-radius: 4px; /* Redondea las esquinas de los campos */
 }
 
 input[type="submit"] {
-  background: #007BFF;
-  color: rgb(44, 199, 247);
-  border: none;
-  padding: 0.7em;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-top: 1em;
+    display: block; /* Hace que el botón de submit se comporte como un bloque */
+    width: 100%; /* Hace que el botón de submit ocupe el 100% del ancho disponible */
+    padding: 10px; /* Añade un padding interno de 10px */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 4px; /* Redondea las esquinas del botón */
+    background-color: #28a745; /* Define un color de fondo verde */
+    color: white; /* Define el color del texto del botón */
+    font-size: 16px; /* Define el tamaño de la fuente del texto del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
 }
 
 input[type="submit"]:hover {
-  background: #0056b3;
+    background-color: #615c5c; /* Cambia el color de fondo del botón cuando pasa el click por encima */
 }
