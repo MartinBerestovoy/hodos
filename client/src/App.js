@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'; // Importa React y sus hooks useEffect y useState
-import Axios from 'axios'; // Importa Axios para hacer peticiones HTTP
-import './styles.css'; // Importa el archivo CSS para estilos
+import React, { useEffect, useState } from 'react'; 
+import Axios from 'axios';
+import './App.css'; 
 
 const App = () => {
-  const [data, setData] = useState([]); // Estado para almacenar datos del servidor
+  const [data, setData] = useState([]); 
   const [formData, setFormData] = useState({ // Estado para almacenar datos del formulario
     comida: '',
     hobby: '',
@@ -13,25 +13,25 @@ const App = () => {
   });
 
   useEffect(() => {
-    // useEffect para ejecutar código cuando el componente se monta
+    
     const fetchData = async () => {
       try {
         const response = await Axios.get('http://localhost:3000/getData'); // Hace una petición GET al backend
         setData(response.data); // Actualiza el estado con los datos recibidos
       } catch (error) {
-        console.error('Error fetching data:', error); // Maneja errores de la petición
+        console.error('Error fetching data:', error); 
       }
     };
   
-    fetchData(); // Llama a fetchData para obtener los datos al montar el componente
-  }, []); // El array vacío [] indica que el efecto se ejecuta solo una vez al montar el componente
+    fetchData(); 
+  }, []); 
 
   const handleChange = (event) => {
-    // Función que maneja los cambios en los campos del formulario
-    const { name, value } = event.target; // Extrae el nombre y valor del campo que se ha modificado
+  
+    const { name, value } = event.target; 
     setFormData({
-      ...formData, // Copia el estado actual del formulario
-      [name]: value // Actualiza solo el campo modificado
+      ...formData, 
+      [name]: value 
     });
   };
 
@@ -121,4 +121,4 @@ const App = () => {
   );
 };
 
-export default App; // Exporta el componente para que pueda ser usado en otros archivos
+export default App; 
