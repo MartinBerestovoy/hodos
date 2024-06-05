@@ -1,16 +1,15 @@
 import express from 'express';
+import save from './post/guardar-informacion.js'
 
 const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
 	res.send('Hola Mundo ') //poner mensaje ente comillas
-}) // aca puedo poner caulquier cosa como para ver en el front 
+}) // aca puedo poner caulquier cosa como para ver en el front, esto es una ruta hay que hacer mas
 
-app.get('/hola', (req, res) => { // url a la que uqeremos que vaya (donde esta el hola)
-	res.send({ messege: 'Hola Mundo!' }) //con res.end no manda nada
-})
-
+// app.post('/guardar', save)
+app.post("/guardar-informacion", save);
 
 app.listen(PORT, (error) => {
 	if (!error)
