@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Formulario de Encuesta</h1>
-        <form action="/submit" method="POST">
+        <form id="surveyForm" action="/submit" method="POST">
             <div class="form-group">
                 <label for="comida">¿Cuál es tu comida favorita?</label>
                 <input type="text" id="comida" name="comida" required>
@@ -19,7 +19,7 @@
                 <input type="text" id="hobby" name="hobby" required>
             </div>
             <div class="form-group">
-                <label for="viaje">¿Cuál ha sido tu viaje más memorable?</label>
+                <label for="viaje">¿Cuál ha sido tu viaje favorito?</label>
                 <input type="text" id="viaje" name="viaje" required>
             </div>
             <div class="form-group">
@@ -32,6 +32,9 @@
             </div>
             <button type="submit">Enviar</button>
         </form>
+        <div id="responseMessage" class="response-message"></div>
     </div>
+
+    <script src="app.js"></script>
 </body>
 </html>

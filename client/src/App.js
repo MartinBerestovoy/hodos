@@ -1,49 +1,59 @@
-import React, { useEffect, useState } from 'react'; 
+import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import './App.css'; 
+import './App.css';
 
 const App = () => {
-  const [data, setData] = useState([]); 
-  const [formData, setFormData] = useState({ // Estado para almacenar datos del formulario
+  const [data, setData] = useState([]); // Estado para almacenar los datos del servidor
+  const [formData, setFormData] = useState({
     comida: '',
     hobby: '',
     viaje: '',
     pelicula: '',
     meta: ''
   });
+  const [responseMessage, setResponseMessage] = useState(''); // Estado para almacenar el mensaje de respuesta
+  const [university, setUniversity] = useState(''); // Estado para almacenar la universidad
+
+  const universities = [
+    'Universidad de Buenos Aires',
+    'Universidad Di Tella',
+    'Universidad de San Andrés',
+    'Universidad de Belgrano'
+  ]; // Lista de universidades
 
   useEffect(() => {
-    
     const fetchData = async () => {
       try {
-        const response = await Axios.get('http://localhost:3000/getData'); // Hace una petición GET al backend
+        const response = await Axios.get('http://localhost:3000/getData'); // Petición GET al backend
         setData(response.data); // Actualiza el estado con los datos recibidos
       } catch (error) {
-        console.error('Error fetching data:', error); 
+        console.error('Error fetching data:', error);
       }
     };
-  
-    fetchData(); 
-  }, []); 
+
+    fetchData(); // Llama a la función fetchData al cargar el componente
+  }, []);
 
   const handleChange = (event) => {
-  
-    const { name, value } = event.target; 
+    const { name, value } = event.target;
     setFormData({
-      ...formData, 
-      [name]: value 
+      ...formData,
+      [name]: value // Actualiza el estado formData con los valores del formulario
     });
   };
 
   const handleSubmit = async (event) => {
-    // Función que maneja el envío del formulario
-    event.preventDefault(); // Previene el comportamiento predeterminado del formulario (recargar la página)
+    event.preventDefault();
     try {
-      const response = await Axios.post('http://localhost:3000/submitForm', formData); // Envía los datos del formulario al backend mediante una petición POST
-      console.log('Form submitted successfully:', response.data); // Muestra un mensaje de éxito en la consola
-      setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' }); // Resetea los campos del formulario
+      const response = await Axios.post('http://localhost:3000/submitForm', formData); // Envía los datos del formulario al backend
+      setResponseMessage('Formulario enviado con éxito: ' + response.data); //  mensaje de respuesta con éxito
+      setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' }); 
+
+      const randomUniversity = universities[Math.floor(Math.random() * universities.length)]; // Selecciona una universidad aleatoria
+      setUniversity(randomUniversity); // Actualiza el estado con la universidad seleccionada
     } catch (error) {
-      console.error('Error submitting form:', error); // Maneja errores de la petición
+      setResponseMessage('Error al enviar el formulario'); //  mensaje de respuesta si hay con error
+      console.error('Error submitting form:', error);
     }
   };
 
@@ -81,7 +91,7 @@ const App = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="viaje">¿Cuál ha sido tu viaje más memorable?</label>
+          <label htmlFor="viaje">¿Cuál ha sido tu viaje favorito?</label>
           <input 
             type="text" 
             id="viaje" 
@@ -96,7 +106,7 @@ const App = () => {
           <input 
             type="text" 
             id="pelicula" 
-            name="pelicula" 
+            name="pelicula"
             value={formData.pelicula}
             onChange={handleChange}
             required 
@@ -114,11 +124,13 @@ const App = () => {
           ></textarea>
         </div>
         <div>
-          <input type="submit" value="Enviar" /> {/* Botón para enviar el formulario */}
+          <input type="submit" value="Enviar" />
         </div>
       </form>
+      {responseMessage && <div className="response-message">{responseMessage}</div>}
+      {university && <div className="university-message">Universidad recomendada: {university}</div>}
     </div>
   );
 };
 
-export default App; 
+export default App;
