@@ -2,21 +2,27 @@
   "name": "hodos",
   "version": "1.0.0",
   "description": "Descripción de tu proyecto",
-  "main": "app.js",   "scripts": {
-    "start": "node app.js", 
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MartinBerestovoy/hodos.git"
   },
-  "keywords": ["web", "frontend", "backend"], 
+  "keywords": [
+    "web",
+    "frontend",
+    "backend"
+  ],
   "author": "Tu Nombre o Equipo",
-  "license": "ISC", 
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/MartinBerestovoy/hodos/issues"
   },
-  "homepage": "https://github.com/MartinBerestovoy/hodos#readme"
+  "homepage": "https://github.com/MartinBerestovoy/hodos#readme",
+  "dependencies": {
+    "react-router-dom": "^6.24.1"
+  }
 }
-
-
