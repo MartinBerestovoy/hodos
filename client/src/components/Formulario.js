@@ -13,9 +13,9 @@ const App = () => {
     meta: ''
   });
   const [responseMessage, setResponseMessage] = useState(''); // Estado para almacenar el mensaje de respuesta
-  const [university, setUniversity] = useState(''); // Estado para almacenar la universidad
+  const [Universidad, setUniversidad] = useState(''); // Estado para almacenar la universidad
 
-  const universities = [
+  const universidades = [
     'Universidad de Buenos Aires',
     'Universidad Di Tella',
     'Universidad de San Andrés',
@@ -50,8 +50,8 @@ const App = () => {
       setResponseMessage('Formulario enviado con éxito: ' + response.data); //  mensaje de respuesta con éxito
       setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' }); 
 
-      const randomUniversity = universities[Math.floor(Math.random() * universities.length)]; // Selecciona una universidad aleatoria
-      setUniversity(randomUniversity); // Actualiza el estado con la universidad seleccionada
+      const randomUniversidad = universidades [Math.floor(Math.random() * universidades.length)]; // Selecciona una universidad aleatoria
+      setUniversidad(randomUniversidad); // Actualiza el estado con la universidad seleccionada
     } catch (error) {
       setResponseMessage('Error al enviar el formulario'); //  mensaje de respuesta si hay con error
       console.error('Error submitting form:', error);
@@ -131,7 +131,7 @@ const App = () => {
           </div>
         </form>
         {responseMessage && <div className="response-message">{responseMessage}</div>}
-        {university && <div className="university-message">Universidad recomendada: {university}</div>}
+        {Universidad && <div className="Universidad-message">Universidad recomendada: {Universidad}</div>}
       </div>
     </div>
   );

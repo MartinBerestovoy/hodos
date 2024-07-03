@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color:#ECE9E9;
     margin: 0;
     padding: 0;
 }
 
 .navbar {
-    background-color: #bee5eb;
-    color: white;
+    background-color:#FFFFFF;
+    color: rgb(0, 8, 255);
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -37,7 +37,7 @@ body {
     color: white;
 }
 
-.container {
+.div {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
@@ -52,44 +52,44 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: none;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: none;
     color: #333;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: none;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: none;
 }
 
 button {
-    width: 100%;
+    width: 60px;
     padding: 10px;
-    border: none;
-    background-color: #28a745;
+    border: 10px;
+    background-color: #134590;
     color: white;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0082e5;
 }
 
 .response-message {
     margin-top: 20px;
     padding: 10px;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
+    background-color: #60c8cd;
+    border: 1px solid #fdfcfc;
     border-radius: 4px;
-    color: #155724;
+    color: #00e8c1;
     text-align: center;
 }
 
@@ -102,50 +102,9 @@ button:hover {
     color: #0c5460;
     text-align: center;
 }
+.navbar img{
+    width: 75px;
+    height: 75px;
+}    
 
-.inicio-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-}
 
-.inicio-box {
-    background-color: #ffffff;
-    border: 2px solid #007bff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-}
-
-.inicio-box h2 {
-    color: #007bff;
-}
-
-.inicio-box p {
-    color: #333;
-}
-
-.highlight {
-    color: #007bff;
-    font-weight: bold;
-}
-
-.inicio-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto 0;
-}
-
-.inicio-button:hover {
-    background-color: #0056b3;
-}
