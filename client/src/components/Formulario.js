@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import Navbar from './components/Navbar';
-import './App.css';
+import Navbar from '../Navbar';
+import '../../App.css';
+
 
 const App = () => {
   const [data, setData] = useState([]); // Estado para almacenar los datos del servidor
@@ -13,7 +14,8 @@ const App = () => {
     meta: ''
   });
   const [responseMessage, setResponseMessage] = useState(''); // Estado para almacenar el mensaje de respuesta
-  const [Universidad, setUniversidad] = useState(''); // Estado para almacenar la universidad
+  const [universidadRecomendada, setUniversidadRecomendada] = useState(''); // Estado para almacenar la universidad recomendada
+  const [rutaSeleccionada, setRutaSeleccionada] = useState(null); // Estado para almacenar la ruta seleccionada
 
   const universidades = [
     'Universidad de Buenos Aires',
@@ -47,13 +49,20 @@ const App = () => {
     event.preventDefault();
     try {
       const response = await Axios.post('http://localhost:3000/submitForm', formData); // Envía los datos del formulario al backend
-      setResponseMessage('Formulario enviado con éxito: ' + response.data); //  mensaje de respuesta con éxito
-      setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' }); 
+      setResponseMessage('Formulario enviado con éxito: ' + response.data); // Mensaje de respuesta con éxito
+      setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' }); // Limpia el formulario
 
-      const randomUniversidad = universidades [Math.floor(Math.random() * universidades.length)]; // Selecciona una universidad aleatoria
-      setUniversidad(randomUniversidad); // Actualiza el estado con la universidad seleccionada
+      const randomUniversidad = universidades[Math.floor(Math.random() * universidades.length)]; // Selecciona una universidad aleatoria
+      setUniversidadRecomendada(randomUniversidad); // Actualiza el estado con la universidad seleccionada
+
+      // Ejemplo de cómo podrías actualizar la ruta seleccionada
+      setRutaSeleccionada({
+        comida: formData.comida,
+        viaje: formData.viaje,
+        fecha: new Date().toLocaleDateString() // Fecha actual formateada
+      });
     } catch (error) {
-      setResponseMessage('Error al enviar el formulario'); //  mensaje de respuesta si hay con error
+      setResponseMessage('Error al enviar el formulario'); // Mensaje de respuesta si hay error
       console.error('Error submitting form:', error);
     }
   };
@@ -131,7 +140,15 @@ const App = () => {
           </div>
         </form>
         {responseMessage && <div className="response-message">{responseMessage}</div>}
-        {Universidad && <div className="Universidad-message">Universidad recomendada: {Universidad}</div>}
+        {universidadRecomendada && <div className="universidad-recomendada">Universidad recomendada: {universidadRecomendada}</div>}
+        {rutaSeleccionada && (
+          <div className="ruta-seleccionada">
+            <h2>Ruta Seleccionada</h2>
+            <p>Comida Favorita: {rutaSeleccionada.comida}</p>
+            <p>Viaje Favorito: {rutaSeleccionada.viaje}</p>
+            <p>Fecha: {rutaSeleccionada.fecha}</p>
+          </div>
+        )}
       </div>
     </div>
   );

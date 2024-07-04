@@ -1,8 +1,15 @@
 import React from 'react';
-import Navbar from '../src/components/Navbar';
+import { useHistory } from 'react-router-dom';
+import Navbar from '../Navbar';
 import './Inicio.css';
 
-const Inicio = ({ onOkClick }) => {
+const Inicio = () => {
+  const history = useHistory();
+
+  const handleOkClick = () => {
+    history.push('/formulario');
+  };
+
   return (
     <div>
       <Navbar />
@@ -15,7 +22,7 @@ const Inicio = ({ onOkClick }) => {
             Esperamos que el screening pueda ayudar lo mayor posible!
             <span className="highlight"> Exitos!</span>
           </p>
-          <button className="inicio-button" onClick={onOkClick}>Ok</button>
+          <button className="inicio-button" onClick={handleOkClick}>Ok</button>
         </div>
       </div>
     </div>
@@ -23,3 +30,4 @@ const Inicio = ({ onOkClick }) => {
 };
 
 export default Inicio;
+

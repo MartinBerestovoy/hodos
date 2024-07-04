@@ -1,25 +1,21 @@
-import React, { useState } from 'react';
-import Navbar from './components/Navbar';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
+import Navbar from './components/Navbar.js';
 import Inicio from './components/Inicio';
 import Formulario from './components/Formulario';
 import './App.css';
 
 const App = () => {
-  const [showInicio, setShowInicio] = useState(true);
-
-  const handleOkClick = () => {
-    setShowInicio(false);
-  };
-
   return (
-    <div className="App">
-      <Navbar />
-      {showInicio ? (
-        <Inicio onOkClick={handleOkClick} />
-      ) : (
-        <Formulario />
-      )}
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Inicio} />
+          <Route path="/formulario" component={Formulario} />
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

@@ -8,7 +8,7 @@ body {
 .navbar {
     background-color:#FFFFFF;
     color: rgb(0, 8, 255);
-    padding: 15px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -103,8 +103,8 @@ button:hover {
     text-align: center;
 }
 .navbar img{
-    width: 75px;
-    height: 75px;
+    width: 110px;
+    height: 70px;
 }    
 
 
