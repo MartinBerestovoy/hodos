@@ -11,7 +11,7 @@ export default async (req, res) => {
   try {
     await client.connect();
 
-    const result = await client.query('SELECT materia, promedio* FROM myp'); // tabla que queres usar creoo
+    const result = await client.query('SELECT materia, promedio FROM myp'); // tabla que queres usar creoo
 
     res.status(200).json(result.rows);
   } catch (error) {
