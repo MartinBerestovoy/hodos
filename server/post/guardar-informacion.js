@@ -2,6 +2,7 @@
 import connection from "../conexion.js"
 
 export default function save(req, res) {
+    
     const { resultado1, resultado2, resultado3, resultado4, resultado5 } = req.body;
 
     // Realizar la inserción en la base de datos
