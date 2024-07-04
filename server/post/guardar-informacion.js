@@ -1,6 +1,18 @@
 
 import connection from "../conexion.js"
 
+async function fetchData() {
+    try {
+      let response = await fetch('https://api.example.com/data'); // Espera a que la promesa se resuelva
+      let data = await response.json(); // Espera a que se resuelva
+      console.log(data); // Procesa los datos recibidos
+    } catch (error) {
+      console.error('Error fetching data:', error); // ocupa de errores
+    }
+  }
+  
+  fetchData(); // Llama a la función
+
 export default function save(req, res) {
     
     const { resultado1, resultado2, resultado3, resultado4, resultado5 } = req.body;
