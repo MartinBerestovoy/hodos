@@ -2,7 +2,7 @@
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background-color: rgb(202, 202, 202);
+  background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
@@ -10,6 +10,38 @@
 h1 {
   text-align: center;
   color: #333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6e5e5; /* Fondo de la página */
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #ffffff; /* Fondo de la barra de navegación */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar img {
+  height: 50px; /* Altura de la imagen del logo */
+}
+
+
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0642f5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .form-group {
@@ -25,7 +57,7 @@ h1 {
 .form-group textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(6, 42, 245);
   border-radius: 4px;
 }
 
