@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import './Formulario.css';
-import Axios from 'axios';
+import React, { useState } from 'react'; // Importa React y useState para manejar el estado del componente
+import './Formulario.css'; // Importa los estilos CSS específicos para este componente
+import Axios from 'axios'; // Importa Axios para manejar solicitudes HTTP
 
 const Formulario = () => {
+  // Define el estado inicial del formulario
   const [formData, setFormData] = useState({
     comida: '',
     hobby: '',
@@ -10,31 +11,40 @@ const Formulario = () => {
     pelicula: '',
     meta: ''
   });
-  const [responseMessage, setResponseMessage] = useState('');
-  const [university, setUniversity] = useState('');
 
+  // Define el estado para los mensajes de respuesta y la universidad recomendada
+  const [responseMessage, setResponseMessage] = useState('');
+  const [universidad, setUniversidad] = useState('');
+
+  // Maneja los cambios en los inputs del formulario
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target; // Extrae el nombre y el valor del input que cambió
     setFormData({
-      ...formData,
-      [name]: value
+      ...formData, // Copia el estado anterior
+      [name]: value // Actualiza el campo específico con el nuevo valor
     });
   };
 
+  // Maneja el envío del formulario
   const handleSubmit = async (event) => {
-    event.preventDefault(); 
+    event.preventDefault(); // Evita el comportamiento por defecto del formulario (recargar la página)
 
     try {
-      const response = await Axios.post('http://localhost:3000/submitForm', formData); // Envía una solicitud POST al backend
-      setResponseMessage(response.data.message); // mensaje de éxito
-      setUniversity(response.data.university); // universidad recibida del backend
-      setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' }); // Restablece formulario
+      // Envía los datos del formulario al backend
+      const response = await Axios.post('http://localhost:3000/submitForm', formData);
+      // Actualiza el estado con el mensaje de respuesta y la universidad recomendada
+      setResponseMessage(response.data.message);
+      setUniversidad(response.data.university);
+      // Restablece los campos del formulario
+      setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' });
     } catch (error) {
-      setResponseMessage('Error al enviar el formulario'); //  mensaje de error
-      console.error('Error submitting form:', error); // Registra el error en la consola
+      // Maneja los errores en caso de que la solicitud falle
+      setResponseMessage('Error al enviar el formulario');
+      console.error('Error submitting form:', error);
     }
   };
 
+  // Renderiza el formulario y los mensajes de respuesta
   return (
     <div className="container">
       <h1>Formulario de Encuesta</h1>
@@ -99,9 +109,9 @@ const Formulario = () => {
         </div>
       </form>
       {responseMessage && <div className="response-message">{responseMessage}</div>}
-      {university && <div className="university-message">Universidad recomendada: {university}</div>}
+      {universidad && <div className="university-message">Universidad recomendada: {universidad}</div>}
     </div>
   );
 };
 
-export default Formulario;
+export default Formulario; // Exporta el componente para que pueda ser utilizado en otros archivos
