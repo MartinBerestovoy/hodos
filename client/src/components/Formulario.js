@@ -44,7 +44,7 @@ const Formulario = () => {
     }
   };
 
-  // Renderiza el formulario y los mensajes de respuesta
+  
   return (
     <div className="container">
       <h1>Formulario de Encuesta</h1>
