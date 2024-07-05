@@ -44,72 +44,74 @@ const Formulario = () => {
     }
   };
 
-  // Renderiza el formulario y los mensajes de respuesta
   return (
-    <div className="container">
-      <h1>Formulario de Encuesta</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="comida">¿Cuál es tu comida favorita?</label>
-          <input
-            type="text"
-            id="comida"
-            name="comida"
-            value={formData.comida}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="hobby">¿Cuál es tu hobby favorito?</label>
-          <input
-            type="text"
-            id="hobby"
-            name="hobby"
-            value={formData.hobby}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="viaje">¿Cuál ha sido tu viaje favorito?</label>
-          <input
-            type="text"
-            id="viaje"
-            name="viaje"
-            value={formData.viaje}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="pelicula">¿Cuál es tu película favorita?</label>
-          <input
-            type="text"
-            id="pelicula"
-            name="pelicula"
-            value={formData.pelicula}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="meta">¿Cuál es una meta que te gustaría alcanzar en los próximos 5 años?</label>
-          <textarea
-            id="meta"
-            name="meta"
-            rows="4"
-            value={formData.meta}
-            onChange={handleChange}
-            required
-          ></textarea>
-        </div>
-        <div>
-          <input type="submit" value="Enviar" />
-        </div>
-      </form>
-      {responseMessage && <div className="response-message">{responseMessage}</div>}
-      {universidad && <div className="university-message">Universidad recomendada: {universidad}</div>}
+    <div>
+      <nav className="navbar">
+        <div className=""><img src="imagenlogoHODOS.jpeg" alt="Logo HODOS" /></div>
+      </nav>
+      <div className="div">
+        <h1>Formulario HODOS</h1>
+        <form id="surveyForm" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="comida">¿Cuál es tu comida favorita?</label>
+            <input
+              type="text"
+              id="comida"
+              name="comida"
+              value={formData.comida}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="hobby">¿Cuál es tu hobby favorito?</label>
+            <input
+              type="text"
+              id="hobby"
+              name="hobby"
+              value={formData.hobby}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="viaje">¿Cuál ha sido tu viaje favorito?</label>
+            <input
+              type="text"
+              id="viaje"
+              name="viaje"
+              value={formData.viaje}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="pelicula">¿Cuál es tu película favorita?</label>
+            <input
+              type="text"
+              id="pelicula"
+              name="pelicula"
+              value={formData.pelicula}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="meta">¿Cuál es una meta que te gustaría alcanzar en los próximos 5 años?</label>
+            <textarea
+              id="meta"
+              name="meta"
+              rows="4"
+              value={formData.meta}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Ok</button>
+        </form>
+        {responseMessage && <div id="responseMessage" className="response-message">{responseMessage}</div>}
+        {universidad && <div id="universidadMessage" className="university-message">Universidad recomendada: {universidad}</div>}
+      </div>
     </div>
   );
 };
