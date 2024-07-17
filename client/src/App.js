@@ -1,22 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
-import Navbar from './components/Navbar.js';
-import Inicio from './components/Inicio';
-import Formulario from './components/Formulario';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Formulario from './components/Formulario';  // Importa tu componente de formulario
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Inicio} />
-          <Route path="/formulario" component={Formulario} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/formulario" component={Formulario} />  // Añade la ruta para el formulario
+      </Switch>
     </Router>
   );
-};
+}
 
 export default App;

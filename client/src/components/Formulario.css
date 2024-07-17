@@ -1,110 +1,82 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color:#ECE9E9;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    background-color:#FFFFFF;
-    color: rgb(0, 8, 255);
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-brand {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.navbar-links a {
-    margin-right: 20px;
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-}
-
-.navbar-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.navbar-toggle-icon {
-    font-size: 24px;
-    color: white;
-}
-
 .div {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+  text-align: center;
+  color: #333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6e5e5; /* Fondo de la página */
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #ffffff; /* Fondo de la barra de navegación */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar img {
+  height: 50px; /* Altura de la imagen del logo */
+}
+
+
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0642f5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .form-group {
-    margin-bottom: none;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: none;
-    color: #333;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: none;
-    border: 1px solid #ccc;
-    border-radius: none;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(6, 42, 245);
+  border-radius: 4px;
 }
 
-button {
-    width: 60px;
-    padding: 10px;
-    border: 10px;
-    background-color: #134590;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0082e5;
+.response-message,
+.university-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .response-message {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #60c8cd;
-    border: 1px solid #fdfcfc;
-    border-radius: 4px;
-    color: #00e8c1;
-    text-align: center;
+  background-color: #a3f8b7;
+  border: 1px solid #c3e6cb;
+  color: #155724;
 }
 
-.university-message {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #d1ecf1;
-    border: 1px solid #bee5eb;
-    border-radius: 4px;
-    color: #0c5460;
-    text-align: center;
+.universidad-message {
+  background-color: #d1ecf1;
+  border: 1px solid #bee5eb;
+  color: #000000;
 }
-.navbar img{
-    width: 110px;
-    height: 70px;
-}    
-
-
