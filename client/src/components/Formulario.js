@@ -13,9 +13,7 @@ const Formulario = () => {
   const [formData, setFormData] = useState({
     comida: '',
     hobby: '',
-    viaje: '',
-    pelicula: '',
-    meta: ''
+    
   });
 
   // Define el estado para los mensajes de respuesta y la universidad recomendada
@@ -40,9 +38,9 @@ const Formulario = () => {
       const response = await Axios.post('http://localhost:3000/submitForm', formData);
       // Actualiza el estado con el mensaje de respuesta y la universidad recomendada
       setResponseMessage(response.data.message);
-      setUniversidad(response.data.university);
+      setUniversidad(response.data.universidad);
       // Restablece los campos del formulario
-      setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' });
+      setFormData({ comida: '', hobby: '' });
     } catch (error) {
       // Maneja los errores en caso de que la solicitud falle
       setResponseMessage('Error al enviar el formulario');
@@ -116,7 +114,7 @@ const Formulario = () => {
           <button type="submit">Ok</button>
         </form>
         {responseMessage && <div id="responseMessage" className="response-message">{responseMessage}</div>}
-        {universidad && <div id="universidadMessage" className="university-message">Universidad recomendada: {universidad}</div>}
+        {universidad && <div id="universidadMessage" className="universidad-message">Universidad recomendada: {universidad}</div>}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 /* Estilos CSS embebidos */
 body {
   font-family: Arial, sans-serif; /* Fuente utilizada en el cuerpo de la página */
-  background-color: #ECE9E9; /* Color de fondo */
+  background-color: #fff; /* Color de fondo */
   margin: 0; /* Elimina los márgenes por defecto */
   padding: 0; /* Elimina el padding por defecto */
 }
@@ -51,7 +51,7 @@ body {
 }
 
 .inicio-box {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 150px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(9, 23, 220, 0.1);
