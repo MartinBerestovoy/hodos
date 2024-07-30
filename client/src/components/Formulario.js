@@ -1,11 +1,8 @@
-HEAD
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
-import Navbar from '../Navbar';
-
 import React, { useState } from 'react'; // Importa React y useState para manejar el estado del componente
 import './Formulario.css'; // Importa los estilos CSS específicos para este componente
 import Axios from 'axios'; // Importa Axios para manejar solicitudes HTTP
+
+
  
 
 const Formulario = () => {
