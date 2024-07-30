@@ -19,14 +19,20 @@ body {
   padding: 0;
 }
 .navbar {
-  background-color: #ffffff; /* Fondo de la barra de navegación */
-  padding: 10px 20px;
+  background-color: #f8f8f8;
+  padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  background-image: url('logo.svg'); /* Añadir imagen de fondo */
+  background-size: 50px 50px; /* Ajustar tamaño de la imagen de fondo */
+  background-repeat: no-repeat; /* Evitar que la imagen se repita */
+  background-position: left center; /* Posicionar la imagen */
 }
 
-.navbar img {
+.logo-container img {
   height: 50px; /* Altura de la imagen del logo */
+  width: auto; 
 }
 
 
