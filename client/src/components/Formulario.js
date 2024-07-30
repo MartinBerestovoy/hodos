@@ -1,15 +1,19 @@
+HEAD
+import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
+import Navbar from '../Navbar';
+
 import React, { useState } from 'react'; // Importa React y useState para manejar el estado del componente
 import './Formulario.css'; // Importa los estilos CSS específicos para este componente
 import Axios from 'axios'; // Importa Axios para manejar solicitudes HTTP
+ 
 
 const Formulario = () => {
   // Define el estado inicial del formulario
   const [formData, setFormData] = useState({
     comida: '',
     hobby: '',
-    viaje: '',
-    pelicula: '',
-    meta: ''
+    
   });
 
   // Define el estado para los mensajes de respuesta y la universidad recomendada
@@ -34,9 +38,9 @@ const Formulario = () => {
       const response = await Axios.post('http://localhost:3000/submitForm', formData);
       // Actualiza el estado con el mensaje de respuesta y la universidad recomendada
       setResponseMessage(response.data.message);
-      setUniversidad(response.data.university);
+      setUniversidad(response.data.universidad);
       // Restablece los campos del formulario
-      setFormData({ comida: '', hobby: '', viaje: '', pelicula: '', meta: '' });
+      setFormData({ comida: '', hobby: '' });
     } catch (error) {
       // Maneja los errores en caso de que la solicitud falle
       setResponseMessage('Error al enviar el formulario');
@@ -110,7 +114,7 @@ const Formulario = () => {
           <button type="submit">Ok</button>
         </form>
         {responseMessage && <div id="responseMessage" className="response-message">{responseMessage}</div>}
-        {universidad && <div id="universidadMessage" className="university-message">Universidad recomendada: {universidad}</div>}
+        {universidad && <div id="universidadMessage" className="universidad-message">Universidad recomendada: {universidad}</div>}
       </div>
     </div>
   );
