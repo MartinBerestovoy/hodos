@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ECE9E9;
+    color: #333;
+}
+
+.intro {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: space-between; /* Espacio entre el contenido y la imagen */
+    padding: 100px 20px;
+    text-align: left;
+    background-color: #ECE9E9; /* O el color de fondo que prefieras */
+    color: white;
+}
+
+.intro-content {
+    max-width: 50%; /* Limita el ancho del contenido de texto */
+}
+
+.intro-image {
+    max-width: 50%; /* Limita el ancho del contenedor de la imagen */
+    text-align: right; /* Asegura que la imagen esté alineada a la derecha */
+}
+
+.intro-image img {
+    width: 100%; /* La imagen ocupará el 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #37B5B6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.logo {
+    font-size: 24px;
+    color: #37B5B6;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    cursor: pointer;
+    color: #333;
+}
+
+.intro {
+    background-image: url('path_to_background_image');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.intro-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #37B5B6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #134590;
+    margin-bottom: 20px;
+}
+
+.card-container, .profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card, .profile-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+}
+
+.icon, .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.card-title, .profile-name {
+    font-size: 18px;
+    margin: 0;
+}
