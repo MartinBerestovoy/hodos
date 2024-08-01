@@ -101,5 +101,10 @@ async function fetchData() {
     console.error('Error fetching data:', error);
   }
 }
+const guardarInformacion = () => {
+ 
+};
+
+export default guardarInformacion;
 
 fetchData();
