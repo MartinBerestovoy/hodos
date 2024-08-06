@@ -1,13 +1,13 @@
 // src/components/Home.js
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Inicio.css'; // Asegúrate de que este archivo CSS existe y contiene tus estilos.
 
 const Home = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleOkClick = () => {
-    history.push('/formulario');
+    navigate('/formulario');
   };
 
   return (
