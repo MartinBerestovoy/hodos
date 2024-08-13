@@ -7,92 +7,75 @@
     <link rel="stylesheet" href="Formulario.css">
 </head>
 <body>
-    
-    <form id="interestForm">
+    <nav>
+        <div class="navbar">
+            <span class="navbar-brand">HODOS</span>
+        </div>
+    </nav>
+
+    <div class="form-container">
         <h1>Formulario HODOS</h1>
-        
-        <div class="question">
-            <p>Pregunta 1: ¿Qué tan interesado estás en la tecnología?</p>
-            <div class="options">
-                <label><input type="radio" name="question1" value="1"> 1</label>
-                <label><input type="radio" name="question1" value="2"> 2</label>
-                <label><input type="radio" name="question1" value="3"> 3</label>
-                <label><input type="radio" name="question1" value="4"> 4</label>
-                <label><input type="radio" name="question1" value="5"> 5</label>
-                <label><input type="radio" name="question1" value="6"> 6</label>
-                <label><input type="radio" name="question1" value="7"> 7</label>
-                <label><input type="radio" name="question1" value="8"> 8</label>
-                <label><input type="radio" name="question1" value="9"> 9</label>
-                <label><input type="radio" name="question1" value="10"> 10</label>
-            </div>
-        </div>
+        <div class="questions-wrapper">
+            <form id="interestForm">
+                <div class="question">
+                    <p>Pregunta 1: ¿Qué tan interesado estás en la tecnología?</p>
+                    <input type="range" name="question1" min="1" max="10" value="5" oninput="updateValue(this)">
+                    <div class="range-labels">
+                        <span>Me gusta mucho</span>
+                        <span>Me gusta</span>
+                        <span>Me es indiferente</span>
+                        <span>No me gusta</span>
+                    </div>
+                </div>
 
-        <div class="question">
-            <p>Pregunta 2: ¿Qué tan interesado estás en el deporte?</p>
-            <div class="options">
-                <label><input type="radio" name="question2" value="1"> 1</label>
-                <label><input type="radio" name="question2" value="2"> 2</label>
-                <label><input type="radio" name="question2" value="3"> 3</label>
-                <label><input type="radio" name="question2" value="4"> 4</label>
-                <label><input type="radio" name="question2" value="5"> 5</label>
-                <label><input type="radio" name="question2" value="6"> 6</label>
-                <label><input type="radio" name="question2" value="7"> 7</label>
-                <label><input type="radio" name="question2" value="8"> 8</label>
-                <label><input type="radio" name="question2" value="9"> 9</label>
-                <label><input type="radio" name="question2" value="10"> 10</label>
-            </div>
-        </div>
+                <div class="question">
+                    <p>Pregunta 2: ¿Qué tan interesado estás en el deporte?</p>
+                    <input type="range" name="question2" min="1" max="10" value="5" oninput="updateValue(this)">
+                    <div class="range-labels">
+                        <span>Me gusta mucho</span>
+                        <span>Me gusta</span>
+                        <span>Me es indiferente</span>
+                        <span>No me gusta</span>
+                    </div>
+                </div>
 
-        <div class="question">
-            <p>Pregunta 3: ¿Qué tan interesado estás en la lectura?</p>
-            <div class="options">
-                <label><input type="radio" name="question3" value="1"> 1</label>
-                <label><input type="radio" name="question3" value="2"> 2</label>
-                <label><input type="radio" name="question3" value="3"> 3</label>
-                <label><input type="radio" name="question3" value="4"> 4</label>
-                <label><input type="radio" name="question3" value="5"> 5</label>
-                <label><input type="radio" name="question3" value="6"> 6</label>
-                <label><input type="radio" name="question3" value="7"> 7</label>
-                <label><input type="radio" name="question3" value="8"> 8</label>
-                <label><input type="radio" name="question3" value="9"> 9</label>
-                <label><input type="radio" name="question3" value="10"> 10</label>
-            </div>
-        </div>
+                <div class="question">
+                    <p>Pregunta 3: ¿Qué tan interesado estás en la lectura?</p>
+                    <input type="range" name="question3" min="1" max="10" value="5" oninput="updateValue(this)">
+                    <div class="range-labels">
+                        <span>Me gusta mucho</span>
+                        <span>Me gusta</span>
+                        <span>Me es indiferente</span>
+                        <span>No me gusta</span>
+                    </div>
+                </div>
 
-        <div class="question">
-            <p>Pregunta 4: ¿Qué tan interesado estás en viajar?</p>
-            <div class="options">
-                <label><input type="radio" name="question4" value="1"> 1</label>
-                <label><input type="radio" name="question4" value="2"> 2</label>
-                <label><input type="radio" name="question4" value="3"> 3</label>
-                <label><input type="radio" name="question4" value="4"> 4</label>
-                <label><input type="radio" name="question4" value="5"> 5</label>
-                <label><input type="radio" name="question4" value="6"> 6</label>
-                <label><input type="radio" name="question4" value="7"> 7</label>
-                <label><input type="radio" name="question4" value="8"> 8</label>
-                <label><input type="radio" name="question4" value="9"> 9</label>
-                <label><input type="radio" name="question4" value="10"> 10</label>
-            </div>
-        </div>
+                <div class="question">
+                    <p>Pregunta 4: ¿Qué tan interesado estás en viajar?</p>
+                    <input type="range" name="question4" min="1" max="10" value="5" oninput="updateValue(this)">
+                    <div class="range-labels">
+                        <span>Me gusta mucho</span>
+                        <span>Me gusta</span>
+                        <span>Me es indiferente</span>
+                        <span>No me gusta</span>
+                    </div>
+                </div>
 
-        <div class="question">
-            <p>Pregunta 5: ¿Qué tan interesado estás en la música?</p>
-            <div class="options">
-                <label><input type="radio" name="question5" value="1"> 1</label>
-                <label><input type="radio" name="question5" value="2"> 2</label>
-                <label><input type="radio" name="question5" value="3"> 3</label>
-                <label><input type="radio" name="question5" value="4"> 4</label>
-                <label><input type="radio" name="question5" value="5"> 5</label>
-                <label><input type="radio" name="question5" value="6"> 6</label>
-                <label><input type="radio" name="question5" value="7"> 7</label>
-                <label><input type="radio" name="question5" value="8"> 8</label>
-                <label><input type="radio" name="question5" value="9"> 9</label>
-                <label><input type="radio" name="question5" value="10"> 10</label>
-            </div>
-        </div>
+                <div class="question">
+                    <p>Pregunta 5: ¿Qué tan interesado estás en la música?</p>
+                    <input type="range" name="question5" min="1" max="10" value="5" oninput="updateValue(this)">
+                    <div class="range-labels">
+                        <span>Me gusta mucho</span>
+                        <span>Me gusta</span>
+                        <span>Me es indiferente</span>
+                        <span>No me gusta</span>
+                    </div>
+                </div>
 
-        <button type="submit">Enviar</button>
-    </form>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
 
     <script src="Formulario.js"></script>
 </body>
