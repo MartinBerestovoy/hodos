@@ -8,13 +8,8 @@
 //     port: 5432
 // });
 import pg from 'pg';
-const { Pool } = pg;
+const { Client } = pg;
 
-const pool = new Pool({
-    connectionString: process.env.POSTGRES_URL,
-})
-
-console.log(pool)
 // await client.connect();
 // console.log("Connected to the database");
 
