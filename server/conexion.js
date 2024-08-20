@@ -10,9 +10,15 @@
 import pg from 'pg';
 const { Client } = pg;
 
-const client = 
+const client = new Client({
+  user: "default",
+  host: "ep-young-snowflake-a4qgqruy-pooler.us-east-1.aws.neon.tech",
+  password: "fY5TQ2VpSxuP",
+  port: 5432,
+  ssl: true
+});
 
-// await client.connect();
-// console.log("Connected to the database");
+client.connect();
+console.log("Connected to the database");
 
-export default pool;
+export default client;
