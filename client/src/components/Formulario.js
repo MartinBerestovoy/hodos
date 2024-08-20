@@ -1,15 +1,13 @@
-import React, { useState } from 'react'; // Importa React y useState para manejar el estado del componente
-import './Formulario.css'; // Importa los estilos CSS específicos para este componente
-import Axios from 'axios'; // Importa Axios para manejar solicitudes HTTP
+const { useState } = React;
 
 const Formulario = () => {
   // Define el estado inicial del formulario con campos para cada pregunta de interés
   const [formData, setFormData] = useState({
-    tecnologia: '',
-    deporte: '',
-    lectura: '',
-    viajar: '',
-    musica: '',
+    tecnologia: 5,
+    deporte: 5,
+    lectura: 5,
+    viajar: 5,
+    musica: 5,
   });
 
   // Define el estado para los mensajes de respuesta y la universidad recomendada
@@ -31,12 +29,12 @@ const Formulario = () => {
 
     try {
       // Envía los datos del formulario al backend
-      const response = await Axios.post('http://localhost:3000/submitForm', formData);
+      const response = await axios.post('http://localhost:3000/submitForm', formData);
       // Actualiza el estado con el mensaje de respuesta y la universidad recomendada
       setResponseMessage(response.data.message);
       setUniversidad(response.data.universidad || ''); // Verifica si la universidad fue proporcionada
       // Restablece los campos del formulario
-      setFormData({ tecnologia: '', deporte: '', lectura: '', viajar: '', musica: '' });
+      setFormData({ tecnologia: 5, deporte: 5, lectura: 5, viajar: 5, musica: 5 });
     } catch (error) {
       // Maneja los errores en caso de que la solicitud falle
       setResponseMessage('Error al enviar el formulario');
@@ -51,7 +49,7 @@ const Formulario = () => {
         <div className="form-group">
           <label htmlFor="tecnologia">¿Qué tan interesado estás en la tecnología?</label>
           <input
-            type="number"
+            type="range"
             id="tecnologia"
             name="tecnologia"
             min="1"
@@ -60,11 +58,17 @@ const Formulario = () => {
             onChange={handleChange}
             required
           />
+          <div className="range-labels">
+            <span>Me gusta mucho</span>
+            <span>Me gusta</span>
+            <span>Me es indiferente</span>
+            <span>No me gusta</span>
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="deporte">¿Qué tan interesado estás en el deporte?</label>
           <input
-            type="number"
+            type="range"
             id="deporte"
             name="deporte"
             min="1"
@@ -73,11 +77,17 @@ const Formulario = () => {
             onChange={handleChange}
             required
           />
+          <div className="range-labels">
+            <span>Me gusta mucho</span>
+            <span>Me gusta</span>
+            <span>Me es indiferente</span>
+            <span>No me gusta</span>
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="lectura">¿Qué tan interesado estás en la lectura?</label>
           <input
-            type="number"
+            type="range"
             id="lectura"
             name="lectura"
             min="1"
@@ -86,11 +96,17 @@ const Formulario = () => {
             onChange={handleChange}
             required
           />
+          <div className="range-labels">
+            <span>Me gusta mucho</span>
+            <span>Me gusta</span>
+            <span>Me es indiferente</span>
+            <span>No me gusta</span>
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="viajar">¿Qué tan interesado estás en viajar?</label>
           <input
-            type="number"
+            type="range"
             id="viajar"
             name="viajar"
             min="1"
@@ -99,11 +115,17 @@ const Formulario = () => {
             onChange={handleChange}
             required
           />
+          <div className="range-labels">
+            <span>Me gusta mucho</span>
+            <span>Me gusta</span>
+            <span>Me es indiferente</span>
+            <span>No me gusta</span>
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="musica">¿Qué tan interesado estás en la música?</label>
           <input
-            type="number"
+            type="range"
             id="musica"
             name="musica"
             min="1"
@@ -112,6 +134,12 @@ const Formulario = () => {
             onChange={handleChange}
             required
           />
+          <div className="range-labels">
+            <span>Me gusta mucho</span>
+            <span>Me gusta</span>
+            <span>Me es indiferente</span>
+            <span>No me gusta</span>
+          </div>
         </div>
         <button type="submit">Enviar</button>
       </form>
@@ -121,4 +149,4 @@ const Formulario = () => {
   );
 };
 
-export default Formulario;
+ReactDOM.render(<Formulario />, document.getElementById('root'));
