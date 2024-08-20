@@ -1,82 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Interés</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Formulario HODOS</title>
     <link rel="stylesheet" href="Formulario.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap">
 </head>
 <body>
-    <nav>
-        <div class="navbar">
-            <span class="navbar-brand">HODOS</span>
-        </div>
+    <div class="logo-container">
+        <span class="logo">HODOS</span>
+    </div>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Áreas de Interés</a></li>
+            <li><a href="#">Especialistas</a></li>
+        </ul>
     </nav>
-
+    
     <div class="form-container">
-        <h1>Formulario HODOS</h1>
-        <div class="questions-wrapper">
-            <form id="interestForm">
-                <div class="question">
-                    <p>Pregunta 1: ¿Qué tan interesado estás en la tecnología?</p>
-                    <input type="range" name="question1" min="1" max="10" value="5" oninput="updateValue(this)">
-                    <div class="range-labels">
-                        <span>Me gusta mucho</span>
-                        <span>Me gusta</span>
-                        <span>Me es indiferente</span>
-                        <span>No me gusta</span>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <p>Pregunta 2: ¿Qué tan interesado estás en el deporte?</p>
-                    <input type="range" name="question2" min="1" max="10" value="5" oninput="updateValue(this)">
-                    <div class="range-labels">
-                        <span>Me gusta mucho</span>
-                        <span>Me gusta</span>
-                        <span>Me es indiferente</span>
-                        <span>No me gusta</span>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <p>Pregunta 3: ¿Qué tan interesado estás en la lectura?</p>
-                    <input type="range" name="question3" min="1" max="10" value="5" oninput="updateValue(this)">
-                    <div class="range-labels">
-                        <span>Me gusta mucho</span>
-                        <span>Me gusta</span>
-                        <span>Me es indiferente</span>
-                        <span>No me gusta</span>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <p>Pregunta 4: ¿Qué tan interesado estás en viajar?</p>
-                    <input type="range" name="question4" min="1" max="10" value="5" oninput="updateValue(this)">
-                    <div class="range-labels">
-                        <span>Me gusta mucho</span>
-                        <span>Me gusta</span>
-                        <span>Me es indiferente</span>
-                        <span>No me gusta</span>
-                    </div>
-                </div>
-
-                <div class="question">
-                    <p>Pregunta 5: ¿Qué tan interesado estás en la música?</p>
-                    <input type="range" name="question5" min="1" max="10" value="5" oninput="updateValue(this)">
-                    <div class="range-labels">
-                        <span>Me gusta mucho</span>
-                        <span>Me gusta</span>
-                        <span>Me es indiferente</span>
-                        <span>No me gusta</span>
-                    </div>
-                </div>
-
-                <button type="submit">Enviar</button>
-            </form>
+        <div class="question-container">
+            <p>1. ¿Qué elegirías hacer en tu tiempo libre?</p>
+        </div>
+        <div class="options-container">
+            <label><input type="radio" name="opcion" value="mucho"> Me gusta mucho</label><br>
+            <label><input type="radio" name="opcion" value="gusta"> Me gusta</label><br>
+            <label><input type="radio" name="opcion" value="indiferente"> Me es indiferente</label><br>
+            <label><input type="radio" name="opcion" value="no-me-gusta"> No me gusta</label>
+        </div>
+        <div class="button-container">
+            <button>Ok</button>
         </div>
     </div>
-
-    <script src="Formulario.js"></script>
 </body>
 </html>
