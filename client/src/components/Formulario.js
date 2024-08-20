@@ -1,13 +1,16 @@
-const { useState } = React;
+import React, { useState } from "react";
+import axios from "axios";
+import './Formulario.css';
 
+// Componente Formulario
 const Formulario = () => {
   // Define el estado inicial del formulario con campos para cada pregunta de interés
   const [formData, setFormData] = useState({
-    tecnologia: 5,
-    deporte: 5,
-    lectura: 5,
-    viajar: 5,
-    musica: 5,
+    tecnologia: "Me gusta mucho",
+    deporte: "Me gusta mucho",
+    lectura: "Me gusta mucho",
+    viajar: "Me gusta mucho",
+    musica: "Me gusta mucho",
   });
 
   // Define el estado para los mensajes de respuesta y la universidad recomendada
@@ -34,7 +37,13 @@ const Formulario = () => {
       setResponseMessage(response.data.message);
       setUniversidad(response.data.universidad || ''); // Verifica si la universidad fue proporcionada
       // Restablece los campos del formulario
-      setFormData({ tecnologia: 5, deporte: 5, lectura: 5, viajar: 5, musica: 5 });
+      setFormData({
+        tecnologia: "Me gusta mucho",
+        deporte: "Me gusta mucho",
+        lectura: "Me gusta mucho",
+        viajar: "Me gusta mucho",
+        musica: "Me gusta mucho"
+      });
     } catch (error) {
       // Maneja los errores en caso de que la solicitud falle
       setResponseMessage('Error al enviar el formulario');
@@ -42,104 +51,55 @@ const Formulario = () => {
     }
   };
 
+  // Renderiza el formulario con JSX
   return (
     <div className="form-container">
       <h1>Formulario de Intereses</h1>
       <form id="surveyForm" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="tecnologia">¿Qué tan interesado estás en la tecnología?</label>
-          <input
-            type="range"
-            id="tecnologia"
-            name="tecnologia"
-            min="1"
-            max="10"
-            value={formData.tecnologia}
-            onChange={handleChange}
-            required
-          />
-          <div className="range-labels">
-            <span>Me gusta mucho</span>
-            <span>Me gusta</span>
-            <span>Me es indiferente</span>
-            <span>No me gusta</span>
-          </div>
+          <select id="tecnologia" name="tecnologia" value={formData.tecnologia} onChange={handleChange} required>
+            <option value="Me gusta mucho">Me gusta mucho</option>
+            <option value="Me gusta">Me gusta</option>
+            <option value="Me es indiferente">Me es indiferente</option>
+            <option value="No me gusta">No me gusta</option>
+          </select>
         </div>
         <div className="form-group">
           <label htmlFor="deporte">¿Qué tan interesado estás en el deporte?</label>
-          <input
-            type="range"
-            id="deporte"
-            name="deporte"
-            min="1"
-            max="10"
-            value={formData.deporte}
-            onChange={handleChange}
-            required
-          />
-          <div className="range-labels">
-            <span>Me gusta mucho</span>
-            <span>Me gusta</span>
-            <span>Me es indiferente</span>
-            <span>No me gusta</span>
-          </div>
+          <select id="deporte" name="deporte" value={formData.deporte} onChange={handleChange} required>
+            <option value="Me gusta mucho">Me gusta mucho</option>
+            <option value="Me gusta">Me gusta</option>
+            <option value="Me es indiferente">Me es indiferente</option>
+            <option value="No me gusta">No me gusta</option>
+          </select>
         </div>
         <div className="form-group">
           <label htmlFor="lectura">¿Qué tan interesado estás en la lectura?</label>
-          <input
-            type="range"
-            id="lectura"
-            name="lectura"
-            min="1"
-            max="10"
-            value={formData.lectura}
-            onChange={handleChange}
-            required
-          />
-          <div className="range-labels">
-            <span>Me gusta mucho</span>
-            <span>Me gusta</span>
-            <span>Me es indiferente</span>
-            <span>No me gusta</span>
-          </div>
+          <select id="lectura" name="lectura" value={formData.lectura} onChange={handleChange} required>
+            <option value="Me gusta mucho">Me gusta mucho</option>
+            <option value="Me gusta">Me gusta</option>
+            <option value="Me es indiferente">Me es indiferente</option>
+            <option value="No me gusta">No me gusta</option>
+          </select>
         </div>
         <div className="form-group">
           <label htmlFor="viajar">¿Qué tan interesado estás en viajar?</label>
-          <input
-            type="range"
-            id="viajar"
-            name="viajar"
-            min="1"
-            max="10"
-            value={formData.viajar}
-            onChange={handleChange}
-            required
-          />
-          <div className="range-labels">
-            <span>Me gusta mucho</span>
-            <span>Me gusta</span>
-            <span>Me es indiferente</span>
-            <span>No me gusta</span>
-          </div>
+          <select id="viajar" name="viajar" value={formData.viajar} onChange={handleChange} required>
+            <option value="Me gusta mucho">Me gusta mucho</option>
+            <option value="Me gusta">Me gusta</option>
+            <option value="Me es indiferente">Me es indiferente</option>
+            <option value="No me gusta">No me gusta</option>
+          </select>
         </div>
         <div className="form-group">
           <label htmlFor="musica">¿Qué tan interesado estás en la música?</label>
-          <input
-            type="range"
-            id="musica"
-            name="musica"
-            min="1"
-            max="10"
-            value={formData.musica}
-            onChange={handleChange}
-            required
-          />
-          <div className="range-labels">
-            <span>Me gusta mucho</span>
-            <span>Me gusta</span>
-            <span>Me es indiferente</span>
-            <span>No me gusta</span>
-          </div>
+          <select id="musica" name="musica" value={formData.musica} onChange={handleChange} required>
+            <option value="Me gusta mucho">Me gusta mucho</option>
+            <option value="Me gusta">Me gusta</option>
+            <option value="Me es indiferente">Me es indiferente</option>
+            <option value="No me gusta">No me gusta</option>
+          </select>
         </div>
         <button type="submit">Enviar</button>
       </form>
@@ -149,4 +109,5 @@ const Formulario = () => {
   );
 };
 
-ReactDOM.render(<Formulario />, document.getElementById('root'));
+// Exporta el componente para que pueda ser usado en otros archivos
+export default Formulario;

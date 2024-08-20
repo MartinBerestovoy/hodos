@@ -78,14 +78,13 @@ body {
 
 /* Sección de introducción con imagen de fondo */
 .intro {
-    background-image: url('/imagen 1.jpg'); /* Imagen de fondo */
-    background-size: cover; /* La imagen cubre todo el contenedor */
-    background-position: center; 
-    padding: 100px 20px; 
-    text-align: center; 
-    color: white; 
+    background-image: url('../../public/imagen1.jpg'); /* Usa la ruta absoluta desde la raíz del sitio */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
 }
-
 /* Contenedor del contenido de la introducción */
 .intro-content {
     max-width: 600px; 

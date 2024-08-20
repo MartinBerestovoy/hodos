@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Prueba />} />  {/* Modificamos para que "Prueba" sea la página predeterminada */}
         <Route path="/about" element={<About />} />
         <Route path="/formulario" element={<Formulario />} />
         <Route path="/prueba" element={<Prueba />} />
