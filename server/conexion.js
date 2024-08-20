@@ -10,6 +10,8 @@
 import pg from 'pg';
 const { Client } = pg;
 
+const client = 
+
 // await client.connect();
 // console.log("Connected to the database");
 
