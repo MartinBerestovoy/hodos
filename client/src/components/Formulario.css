@@ -1,47 +1,132 @@
+/* Estilos generales para el cuerpo de la página */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Work Sans', sans-serif; /* Define la fuente principal de la página */
+  background-color: #ECE9E9; /* Color de fondo para toda la página */
+  margin: 0; /* Elimina el margen por defecto del cuerpo */
+  padding: 0; /* Elimina el relleno por defecto del cuerpo */
 }
 
+/* Contenedor principal que agrupa logo y barra de navegación */
+.header {
+  display: flex; /* Flexbox para alinear en una misma línea */
+  align-items: center; /* Alinea verticalmente los elementos en el centro */
+  padding: 20px; /* Añade espacio interno */
+  justify-content: space-between; /* Coloca los elementos en extremos opuestos (izquierda y derecha) */
+  background-color: #ffffff; /* Cambia el color de fondo a blanco */
+  box-shadow: 0px 
+}
+
+/* Estilos para el contenedor del logo */
+.logo-container {
+  font-size: 36px; /* Tamaño del logo */
+  color: #37b5b6; /* Color del texto del logo */
+  font-weight: bold; /* Negrita en el logo */
+}
+
+/* Estilos para la barra de navegación */
 .navbar {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
+  display: flex; /* Usa flexbox para organizar los enlaces en línea */
+  list-style: none; /* Elimina los puntos de la lista */
+  margin: 0; /* Elimina los márgenes por defecto */
+  padding: 0; /* Elimina los rellenos por defecto */
 }
 
+.navbar li {
+  margin-right: 20px; /* Añade espacio entre los enlaces */
+}
+
+.navbar li a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: #000; /* Color negro para los enlaces */
+  font-weight: bold; /* Negrita en los enlaces */
+}
+
+/* Estilos para el contenedor del formulario */
 .form-container {
-  width: 60%;
-  margin: auto;
-  margin-top: 20px;
-  text-align: center;
+  width: 700px; /* Establece el ancho del formulario */
+  background-color: #ffffff; /* Fondo blanco para el formulario */
+  border-radius: 10px; /* Bordes redondeados para el formulario */
+  margin: 40px auto; /* Centra el formulario en la página con un margen superior de 40px */
+  padding: 20px; /* Añade espacio interno al formulario */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del formulario */
+  height: 400px;
 }
 
-.questions-wrapper {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
+/* Estilos para el contenedor de la pregunta */
+.question-container {
+  font-size: 18px; /* Tamaño de fuente para la pregunta */
+  margin-bottom: 20px; /* Espacio debajo de la pregunta */
 }
 
-.question {
-  margin-bottom: 20px;
-}
-
-.range-labels {
+/* Estilos para el contenedor de las opciones */
+.options-container {
+  margin-bottom: 20px; /* Espacio debajo de las opciones */
   display: flex;
-  justify-content: space-between;
-  font-size: 12px;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre cada opción */
 }
 
-.range-labels span {
-  flex: 1;
-  text-align: center;
-  opacity: 0.5;
+/* Estilos para las etiquetas de las opciones de radio */
+.options-container label {
+  font-size: 16px; /* Tamaño de fuente para las opciones */
+  display: flex; /* Alinea los radio buttons y el texto en una misma fila */
+  align-items: center; /* Centra verticalmente los radio buttons y el texto */
+  cursor: pointer; /* Cambia el cursor a una mano cuando el usuario pasa sobre la opción */
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
+/* Oculta el radio button por defecto */
+.options-container input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #134590; /* Borde azul oscuro */
+  border-radius: 50%; /* Bordes redondeados para el radio button */
+  margin-right: 10px; /* Espacio entre el radio button y el texto */
+  outline: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para el estado seleccionado del radio button */
+.options-container input[type="radio"]:checked {
+  background-color: #37b5b6; /* Color de fondo cian cuando está seleccionado */
+  border-color: #37b5b6; /* Cambia el color del borde al estar seleccionado */
+}
+
+.options-container input[type="radio"]:checked::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: white; /* Color del círculo interno blanco */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Estilos para el contenedor del botón */
+.button-container {
+  text-align: right; /* Alinea el botón a la derecha */
+}
+
+/* Estilos para los botones y enlaces dentro de .button-container */
+.button-container button,
+.button-container .button {
+  background-color: #134590; /* Color de fondo azul para el botón */
+  color: white; /* Color del texto del botón */
+  padding: 10px 20px; /* Espacio interno del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 5px; /* Bordes redondeados para el botón */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  display: inline-block; /* Asegura que el enlace se comporte como un botón */
+  cursor: pointer; /* Cambia el cursor a una mano cuando el usuario pasa sobre el botón */
+  margin-left: 10px; /* Añade un pequeño margen entre el botón y el enlace */
+}
+
+/* Efecto hover para el botón de envío */
+.button-container button:hover,
+.button-container .button:hover {
+  background-color: #0056b3; /* Cambia el color de fondo cuando el botón es seleccionado */
 }
