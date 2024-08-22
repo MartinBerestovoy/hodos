@@ -101,6 +101,7 @@ app.listen(port, () => {
 	console.log(`Servidor ejecutándose en el puerto ${port}`);
 });
 
+
 function save_AI(req, res) {
 	console.log(req.body);
 	const { O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude,AbstractReasoning, VerbalReasoning, carrer } = req.body; //nombre tabla 
