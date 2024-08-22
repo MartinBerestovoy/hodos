@@ -4,9 +4,10 @@ import './Prueba.css';
 
 const Prueba = () => { // Define el componente funcional Prueba
   return (
+    
     <div>
       <header className="header fade-in"> {/* Contenedor del encabezado con clases para estilos */}
-        <div className="logo">HODOS</div> {/* Logo de la página */}
+      <img className="icon" src="/LOGO.jpg" alt="HODOS" />
         <nav className="navbar"> {/* Barra de navegación */}
           <ul>
             <li><Link to="/about">Sobre Nosotros</Link></li> {/* Enlaces que navegan dentro de la app React */}
@@ -22,7 +23,7 @@ const Prueba = () => { // Define el componente funcional Prueba
           <Link to="/Inicio" className="button">Empezar</Link> {/* Botón que navega a la página de inicio */}
         </div>
         <div className="intro-image">
-          <img src="../../public/imagen1.jpg" alt="Imagen de introducción" /> {/* Imagen introductoria */}
+          <img src="/imagen1.jpg" alt="Imagen de introducción" /> {/* Imagen introductoria */}
         </div>
       </section>
 
@@ -31,19 +32,19 @@ const Prueba = () => { // Define el componente funcional Prueba
         <div className="card-container">
           <div className="card">
             <div className="card-content">
-              <img className="icon" src="path_to_icon1" alt="Icon 1" /> {/* Icono para la tarjeta */}
+              <img className="icon" src="/Productos1.jpg" alt="Icon 1" /> {/* Icono para la tarjeta */}
               <p className="card-title">Evaluación de Intereses</p> {/* Título de la tarjeta */}
             </div>
             <div className="card-content">
-              <img className="icon" src="path_to_icon2" alt="Icon 2" />
+              <img className="icon" src="/Productos2.jpg" alt="Icon 2" />
               <p className="card-title">Carreras y Universidades</p>
             </div>
             <div className="card-content">
-              <img className="icon" src="path_to_icon3" alt="Icon 3" />
+              <img className="icon" src="/Productos3.jpg" alt="Icon 3" />
               <p className="card-title">Testimonios y Experiencias</p>
             </div>
             <div className="card-content">
-              <img className="icon" src="path_to_icon4" alt="Icon 4" />
+              <img className="icon" src="/Productos4.jpg" alt="Icon 4" />
               <p className="card-title">Consulta con Orientadores</p>
             </div>
           </div>
@@ -55,19 +56,19 @@ const Prueba = () => { // Define el componente funcional Prueba
         <div className="card-container">
           <div className="card">
             <div className="card-content">
-              <img className="profile-photo" src="path_to_photo1" alt="Francisco Caruso" /> {/* Foto del perfil */}
+              <img className="profile-photo" src="/Nombres1.jpg" alt="Francisco Caruso" /> {/* Foto del perfil */}
               <p className="profile-name">Lic. Francisco Caruso</p> {/* Nombre del perfil */}
             </div>
             <div className="card-content">
-              <img className="profile-photo" src="path_to_photo2" alt="Martina Pirolo" />
+              <img className="profile-photo" src="/Nombres2.jpg" alt="Martina Pirolo" />
               <p className="profile-name">Lic. Martina Pirolo</p>
             </div>
             <div className="card-content">
-              <img className="profile-photo" src="path_to_photo3" alt="Emma Morvillo" />
+              <img className="profile-photo" src="/Nombres3.jpg" alt="Emma Morvillo" />
               <p className="profile-name">Lic. Emma Morvillo</p>
             </div>
             <div className="card-content">
-              <img className="profile-photo" src="path_to_photo4" alt="Martin Berestovoy" />
+              <img className="profile-photo" src="/Nombres4.jpg" alt="Martin Berestovoy" />
               <p className="profile-name">Lic. Martin Berestovoy</p>
             </div>
           </div>

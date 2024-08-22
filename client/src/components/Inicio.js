@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Inicio.css';
+import Navbar from './Navbar.js';
+
+
 
 const Inicio = () => {
   const navigate = useNavigate();
@@ -10,6 +13,8 @@ const Inicio = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="inicio-container">
       <div className="inicio-box">
         <h2>¡Antes de comenzar!</h2>
@@ -22,6 +27,7 @@ const Inicio = () => {
         <button className="inicio-button" onClick={handleOkClick}>Ok</button>
       </div>
     </div>
+    </>
   );
 };
 

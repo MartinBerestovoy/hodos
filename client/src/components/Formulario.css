@@ -13,9 +13,10 @@ body {
   padding: 20px; /* Añade espacio interno */
   justify-content: space-between; /* Coloca los elementos en extremos opuestos (izquierda y derecha) */
   background-color: #ffffff; /* Cambia el color de fondo a blanco */
-  box-shadow: 0px 
-  
+  box-shadow: 0px;
+  font-family: "Poppins",sans-serif;
 }
+
 
 
 /* Estilos para el contenedor del logo */
@@ -41,7 +42,9 @@ body {
 .navbar li a {
   text-decoration: none; /* Elimina el subrayado de los enlaces */
   color: #000; /* Color negro para los enlaces */
-  font-weight: bold; /* Negrita en los enlaces */
+  box-shadow: none; /* Sombra suave alrededor del formulario */
+
+  
 }
 
 /* Estilos para el contenedor del formulario */
