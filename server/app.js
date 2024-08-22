@@ -100,3 +100,27 @@ app.get('/resultados', (req, res) => {
 app.listen(port, () => {
 	console.log(`Servidor ejecutándose en el puerto ${port}`);
 });
+
+function save(req, res) {
+	console.log(req.body);
+	const { O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude,AbstractReasoning, VerbalReasoning, carrer } = req.body; //nombre tabla 
+
+	// Realizar la inserción en la base de datos
+	connection.query("INSERT INTO test  (O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer ], (err, result) => {
+		if (err) {
+			console.error("Error al guardar la información:", err);
+			res.status(500).send("Error al guardar la información en la base de datos");
+			return;
+		}
+		console.log("Información guardada correctamente en la base de datos");
+		res.status(200).send("Información guardada correctamente");
+	});
+
+
+};
+
+const app = express();
+const port = 3000;
+const hostname = 'localhost';
+
+app.use(express.json());
