@@ -1,22 +1,14 @@
 import React from 'react'; // Importa React para poder usar JSX y crear componentes
 import { Link } from 'react-router-dom'; // Importa el componente Link de React Router para manejar la navegación
 import './Prueba.css';
+import Navbar from './Navbar.js';
 
 const Prueba = () => { // Define el componente funcional Prueba
   return (
-    
-    <div>
-      <header className="header fade-in"> {/* Contenedor del encabezado con clases para estilos */}
-      <img className="icon" src="/LOGO.jpg" alt="HODOS" />
-        <nav className="navbar"> {/* Barra de navegación */}
-          <ul>
-            <li><Link to="/about">Sobre Nosotros</Link></li> {/* Enlaces que navegan dentro de la app React */}
-            <li><Link to="/areas-de-interes">Áreas de Interés</Link></li>
-            <li><Link to="/especialistas">Especialistas</Link></li>
-          </ul>
-        </nav>
-      </header>
+  <>
+    <Navbar/>
 
+    <div>
       <section className="intro fade-in"> {/* Sección introductoria */}
         <div className="intro-content">
           <h1>Screening Vocacional</h1> {/* Título principal */}
@@ -80,17 +72,18 @@ const Prueba = () => { // Define el componente funcional Prueba
         <div className="card-container">
           <div className="card">
             <div className="card-content">
-              <img className="profile-photo" src="path_to_photo5" alt="Fernanda Cabalen" />
+            <img className="icon" src="/Nombres3.jpg" alt="Fernanda Cabalen" />
               <p className="profile-name">Lic. Fernanda Cabalen</p>
             </div>
             <div className="card-content">
-              <img className="profile-photo" src="path_to_photo6" alt="Hernan Caruso" />
+            <img className="icon" src="/Nombres4.jpg" alt="Hernan Caruso" />
               <p className="profile-name">Lic. Hernan Caruso</p>
             </div>
           </div>
         </div>
       </section>
     </div>
+    </>
   );
 }
 

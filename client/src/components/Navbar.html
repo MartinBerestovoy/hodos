@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Inicio con Navbar</title>
-  <link rel="stylesheet" href="Inicio.css"> <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="Navbar.css"> 
 </head>
 <body>
   <nav class="navbar">
-    <div class="navbar-brand">HODOS</div>
-    <div class="navbar-links">
-      <a href="SobreNosotros.html" class="button">Sobre Nosotros</a>
-      <a href="#especialistas">Especialistas</a>
+    <div className="logo">
+    <img src="../../public/LOGO.jpg" alt="HODSO">
+    </div>
+    <div class="menu">
+      <a href="SobreNosotros" className="menu-item">Sobre Nosotros</a>
+      <a href="#especialistas" className="menu-item">Especialistas</a>
       <button class="navbar-toggle">
         <span class="navbar-toggle-icon">&#9776;</span>
       </button>

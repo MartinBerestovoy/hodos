@@ -1,12 +1,14 @@
 import React from 'react';
-import './Inicio.css';
+import './Navbar.css';
 
 function Navbar() {
     return (
     <div>
         <nav class="navbar">
-    <div class="navbar-brand">HODOS</div>
-    <div class="navbar-links">
+    <div className="logo">
+    <img src="/LOGO.jpg" alt="HODOS"/>
+    </div>
+    <div class="navbar-menu">
       <a href="SobreNosotros.html" class="button">Sobre Nosotros</a>
       <a href="#especialistas">Especialistas</a>
       <button class="navbar-toggle">
