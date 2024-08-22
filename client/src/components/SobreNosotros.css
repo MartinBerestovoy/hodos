@@ -1,0 +1,96 @@
+
+body {
+    font-family: Arial, sans-serif; /* Fuente utilizada en el cuerpo de la página */
+    background-color: #ECE9E9 ; /* Color de fondo */
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+  }
+  
+  .navbar {
+    background-color: #FFFFFF; /* Color de fondo de la barra de navegación */
+    color: #333; /* Color del texto en la barra de navegación */
+    padding: 10px 20px;
+    height: 50px;
+    display: flex; /* Utiliza Flexbox para el diseño de la barra de navegación */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos de la barra */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+  }
+  
+  .navbar-brand {
+    font-size: 24px; /* Tamaño de la fuente para la marca */
+    font-weight: bold; /* Fuente en negrita para la marca */
+    color: #37B5B6; /* Color azul para la marca */
+  }
+  
+  .navbar-links a {
+    margin-right: 20px; /* Margen derecho entre los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #333; /* Color del texto de los enlaces */
+    font-weight: 500; /* Peso de la fuente de los enlaces */
+  }
+  
+  .navbar-toggle {
+    background: none; /* Sin fondo para el botón de alternancia */
+    border: none; /* Sin borde para el botón de alternancia */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+  }
+  
+  .navbar-toggle-icon {
+    font-size: 24px; /* Tamaño de la fuente del icono de alternancia */
+    color: #333; /* Color del icono de alternancia */
+  }
+  
+  .inicio-container {
+    display: flex; /* Utiliza Flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    height: calc(100vh - 50px); /* Altura de la pantalla completa menos la altura de la navbar */
+    background-color: #f4f4f4; /* Color de fondo */
+    padding-top: 50px; /* Añade espacio en la parte superior para la navbar */
+  }
+  
+  .inicio-box {
+    background-color: #fff;
+    padding: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(9, 23, 220, 0.1);
+    text-align: left; /* Alinea el texto a la izquierda */
+    max-width: 400px;
+  }
+  
+  .inicio-box h2 {
+    font-size: 35px; /* Tamaño de la fuente */
+    margin-top: 0; /* Elimina el margen superior predeterminado */
+    color: #2a4598; 
+  }
+  
+  
+  .inicio-box p {
+    color: #333; /* Color gris oscuro para el texto del párrafo */
+    width: 400px; 
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+  }
+  
+  .highlight {
+    color: #134590; /* Color azul para el texto destacado */
+    font-weight: bold; /* Texto en negrita */
+  }
+  
+  .inicio-button {
+    background-color: #134590; /* Color de fondo azul para el botón */
+    color: white; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de la fuente del botón */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+    display: block; /* Bloque para centrar */
+    margin: 20px auto 0; /* Margen superior y centrado horizontal */
+    text-align: right;
+  }
+  
+  .inicio-button:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+  }
