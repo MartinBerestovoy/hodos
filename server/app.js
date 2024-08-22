@@ -20,7 +20,7 @@ import fetch from 'node-fetch';
 
 function save(req, res) {
 	console.log(req.body);
-	const { resultado1, resultado2, resultado3, resultado4, resultado5 } = req.body;
+	const { resultado1, resultado2, resultado3, resultado4, resultado5 } = req.body; //nombre tabla 
 
 	// Realizar la inserción en la base de datos
 	connection.query("INSERT INTO tabla (resultado1, resultado2, resultado3, resultado4, resultado5) VALUES (?, ?, ?, ?, ?)", [resultado1, resultado2, resultado3, resultado4, resultado5], (err, result) => {
@@ -86,3 +86,22 @@ app.get('/', (req, res) => {
 // app.post('/guardar', save)
 app.post("/guardar-informacion", save);
 
+// hacer un get de los resultados e incertarlos manuealmente en la ytabla haciendo un a query en vercel
+
+
+app.get('/resultados', (req, res) => {
+	const query = 'SELECT * FROM resultados';
+
+	connection.query(query, (error, results) => {
+		if (error) {
+			console.error('Error al realizar la consulta:', error);
+			res.status(500).send('Error');
+			return;
+		}
+		const PORT = process.env.PORT || 3000;
+	});
+});
+
+app.listen(PORT, () => {
+	console.log(`Servidor ejecutándose en el puerto ${PORT}`);
+});
