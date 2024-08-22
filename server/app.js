@@ -62,11 +62,6 @@ app.post('/save', (req, res) => {
 	});
 });
 
-//incia expresss
-app.listen(port, () => {
-	console.log(`Servidor corriendo en el puerto ${port}`);
-});
-
 
 // const server = createServer((req, res) => {
 //   res.statusCode = 200;
@@ -98,10 +93,10 @@ app.get('/resultados', (req, res) => {
 			res.status(500).send('Error');
 			return;
 		}
-		const PORT = process.env.PORT || 3000;
+		const port = process.env.port || 3000;
 	});
 });
 
-app.listen(PORT, () => {
-	console.log(`Servidor ejecutándose en el puerto ${PORT}`);
+app.listen(port, () => {
+	console.log(`Servidor ejecutándose en el puerto ${port}`);
 });
