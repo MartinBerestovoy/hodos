@@ -14,7 +14,9 @@ body {
   justify-content: space-between; /* Coloca los elementos en extremos opuestos (izquierda y derecha) */
   background-color: #ffffff; /* Cambia el color de fondo a blanco */
   box-shadow: 0px 
+  
 }
+
 
 /* Estilos para el contenedor del logo */
 .logo-container {
@@ -29,6 +31,7 @@ body {
   list-style: none; /* Elimina los puntos de la lista */
   margin: 0; /* Elimina los márgenes por defecto */
   padding: 0; /* Elimina los rellenos por defecto */
+  
 }
 
 .navbar li {

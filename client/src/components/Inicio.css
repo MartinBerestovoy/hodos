@@ -15,12 +15,14 @@ body {
   justify-content: space-between; /* Distribuye el espacio entre los elementos de la barra */
   align-items: center; /* Alinea los elementos verticalmente en el centro */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+  font-weight: bold; /* Negrita en los enlaces */
 }
 
 .navbar-brand {
   font-size: 24px; /* Tamaño de la fuente para la marca */
   font-weight: bold; /* Fuente en negrita para la marca */
   color: #37B5B6; /* Color azul para la marca */
+  font-weight: bold; /* Negrita en los enlaces */
 }
 
 .navbar-links a {
@@ -28,6 +30,25 @@ body {
   text-decoration: none; /* Elimina el subrayado de los enlaces */
   color: #333; /* Color del texto de los enlaces */
   font-weight: 500; /* Peso de la fuente de los enlaces */
+}
+
+/* Cambios realizados para el botón "Sobre Nosotros" */
+.navbar-button { /* Nueva clase añadida */
+  display: inline-block; /* Asegura que el botón se comporte como un bloque */
+  padding: 10px 15px; /* Espaciado interno */
+  background-color: #007BFF; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  font-weight: bold; /* Negrita en los enlaces */
+}
+
+.navbar-button:hover { /* Estado al pasar el ratón sobre el botón */
+  background-color: #0056b3; /* Color al pasar el ratón */
+  font-weight: bold; /* Negrita en los enlaces */
 }
 
 .navbar-toggle {
@@ -64,7 +85,6 @@ body {
   margin-top: 0; /* Elimina el margen superior predeterminado */
   color: #2a4598; 
 }
-
 
 .inicio-box p {
   color: #333; /* Color gris oscuro para el texto del párrafo */
