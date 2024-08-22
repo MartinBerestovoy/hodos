@@ -4,6 +4,7 @@ import './Prueba.css';
 
 const Prueba = () => { // Define el componente funcional Prueba
   return (
+    
     <div>
       <header className="header fade-in"> {/* Contenedor del encabezado con clases para estilos */}
       <img className="icon" src="/LOGO.jpg" alt="HODOS" />

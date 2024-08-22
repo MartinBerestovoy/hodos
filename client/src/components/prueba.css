@@ -22,6 +22,7 @@ body {
     max-width: 50%; 
    color: #134590;
    font-family: Sk-Modernist;
+   display: flex; 
 
 }
 
@@ -31,10 +32,13 @@ body {
     text-align: right; 
 }
 
-/* Estilos para la imagen dentro del contenedor de la introducción */
+/* Estilos para la imagen  */
 .intro-image img {
     width: 100%; 
-    height: auto; 
+    height: 800px; 
+    display: flex; 
+    margin-top: -100px;
+    
 }
 
 /* Estilos para el botón */
@@ -54,8 +58,13 @@ body {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 20px; 
+    padding: 0px; 
     background-color: #FFFFFF; 
+    
+}
+.fotologo {
+    display: flex; 
+    margin-left: 130px;
 }
 
 /* Estilos para el logo */
