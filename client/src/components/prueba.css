@@ -17,9 +17,12 @@ body {
     color: white; /* Color del texto */
 }
 
-/* Contenedor del contenido de la introducción */
+/* Contenedor texto Screening vocacional */
 .intro-content {
     max-width: 50%; 
+   color: #134590;
+   font-family: Sk-Modernist;
+
 }
 
 /* Contenedor de la imagen de la introducción */
@@ -78,17 +81,18 @@ body {
 
 /* Sección de introducción con imagen de fondo */
 .intro {
-    background-image: url('../../public/imagen1.jpg'); /* Usa la ruta absoluta desde la raíz del sitio */
+    background-image: url; /* Usa la ruta absoluta desde la raíz del sitio */
     background-size: cover;
-    background-position: center;
+    background-position:right;
     padding: 100px 20px;
     text-align: center;
     color: white;
+    
 }
 /* Contenedor del contenido de la introducción */
 .intro-content {
     max-width: 600px; 
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 /* Sección para otras secciones de contenido */
