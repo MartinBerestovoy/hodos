@@ -23,7 +23,7 @@ function save(req, res) {
 	const { resultado1, resultado2, resultado3, resultado4, resultado5 } = req.body; //nombre tabla 
 
 	// Realizar la inserción en la base de datos
-	connection.query("INSERT INTO tabla (resultado1, resultado2, resultado3, resultado4, resultado5) VALUES (?, ?, ?, ?, ?)", [resultado1, resultado2, resultado3, resultado4, resultado5], (err, result) => {
+	connection.query("INSERT INTO resultados  (resultado1, resultado2, resultado3, resultado4, resultado5) VALUES ($1, $2, $3, $4, $5)", [resultado1, resultado2, resultado3, resultado4, resultado5], (err, result) => {
 		if (err) {
 			console.error("Error al guardar la información:", err);
 			res.status(500).send("Error al guardar la información en la base de datos");
