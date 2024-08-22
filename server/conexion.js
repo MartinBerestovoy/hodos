@@ -14,6 +14,8 @@ const client = new Client({
   user: "default",
   host: "ep-young-snowflake-a4qgqruy-pooler.us-east-1.aws.neon.tech",
   password: "fY5TQ2VpSxuP",
+  database: "verceldb",
+
   port: 5432,
   ssl: true
 });

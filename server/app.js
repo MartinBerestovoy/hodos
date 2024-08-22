@@ -23,7 +23,7 @@ function save(req, res) {
 	const { resultado1, resultado2, resultado3, resultado4, resultado5 } = req.body; //nombre tabla 
 
 	// Realizar la inserción en la base de datos
-	connection.query("INSERT INTO tabla (resultado1, resultado2, resultado3, resultado4, resultado5) VALUES (?, ?, ?, ?, ?)", [resultado1, resultado2, resultado3, resultado4, resultado5], (err, result) => {
+	connection.query("INSERT INTO resultados  (resultado1, resultado2, resultado3, resultado4, resultado5) VALUES ($1, $2, $3, $4, $5)", [resultado1, resultado2, resultado3, resultado4, resultado5], (err, result) => {
 		if (err) {
 			console.error("Error al guardar la información:", err);
 			res.status(500).send("Error al guardar la información en la base de datos");
@@ -62,11 +62,6 @@ app.post('/save', (req, res) => {
 	});
 });
 
-//incia expresss
-app.listen(port, () => {
-	console.log(`Servidor corriendo en el puerto ${port}`);
-});
-
 
 // const server = createServer((req, res) => {
 //   res.statusCode = 200;
@@ -98,10 +93,28 @@ app.get('/resultados', (req, res) => {
 			res.status(500).send('Error');
 			return;
 		}
-		const PORT = process.env.PORT || 3000;
+		const port = process.env.port || 3000;
 	});
 });
 
-app.listen(PORT, () => {
-	console.log(`Servidor ejecutándose en el puerto ${PORT}`);
+app.listen(port, () => {
+	console.log(`Servidor ejecutándose en el puerto ${port}`);
 });
+
+function save_AI(req, res) {
+	console.log(req.body);
+	const { O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude,AbstractReasoning, VerbalReasoning, carrer } = req.body; //nombre tabla 
+
+	// Realizar la inserción en la base de datos
+	connection.query("INSERT INTO test  (O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer ], (err, result) => {
+		if (err) {
+			console.error("Error al guardar la información:", err);
+			res.status(500).send("Error al guardar la información en la base de datos");
+			return;
+		}
+		console.log("Información guardada correctamente en la base de datos");
+		res.status(200).send("Información guardada correctamente");
+	});
+
+
+};
