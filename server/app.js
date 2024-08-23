@@ -118,4 +118,5 @@ function save_AI(req, res) {
 	});
 
 
-};
+};	
+app.post('/guardar-ai', save_AI); //llamo a la funcion

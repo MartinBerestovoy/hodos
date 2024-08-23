@@ -109,10 +109,10 @@ server.listen(port + 1, hostname, () => {
  export default guardarInformacion;
 
  fetchData();
-
- app.get('/', (req, res) => {
+app.get('/', (req, res) => {
  	res.send('Hola Mundo ') //poner mensaje ente comillas
- }) // aca puedo poner caulquier cosa como para ver en el front, esto es una ruta hay que hacer mas
+ })
+  // aca puedo poner caulquier cosa como para ver en el front, esto es una ruta hay que hacer mas
 
  app.post('/guardar', save)
  app.post("/guardar-informacion", save);
