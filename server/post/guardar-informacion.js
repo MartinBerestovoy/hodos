@@ -108,6 +108,15 @@ server.listen(port + 1, hostname, () => {
 
  export default guardarInformacion;
 
+ app.post('/guardar-ai', (req, res) => {
+  // Aquí se manejará la información que recibas
+  const data = req.body; // Obtén los datos que enviaste
+  console.log(data); // Muestra los datos en la consola
+
+  // Aquí podrías hacer algo con los datos, como guardarlos en la base de datos
+  res.status(200).send('Información guardada correctamente'); // Respuesta al cliente
+});
+
  fetchData();
 app.get('/', (req, res) => {
  	res.send('Hola Mundo ') //poner mensaje ente comillas
