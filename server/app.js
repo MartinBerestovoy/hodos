@@ -75,7 +75,7 @@ app.post('/save', (req, res) => {
 
 // es nesesaria?
 app.get('/', (req, res) => {
-	res.send('Hola Mundo ') //poner mensaje ente comillas
+	res.send('Hola Mundoo ') //poner mensaje ente comillas
 }) // aca puedo poner caulquier cosa como para ver en el front, esto es una ruta hay que hacer mas
 
 // app.post('/guardar', save)
