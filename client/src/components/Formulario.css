@@ -7,15 +7,7 @@ body {
 }
 
 /* Contenedor principal que agrupa logo y barra de navegación */
-.header {
-  display: flex; /* Flexbox para alinear en una misma línea */
-  align-items: center; /* Alinea verticalmente los elementos en el centro */
-  padding: 20px; /* Añade espacio interno */
-  justify-content: space-between; /* Coloca los elementos en extremos opuestos (izquierda y derecha) */
-  background-color: #ffffff; /* Cambia el color de fondo a blanco */
-  box-shadow: 0px;
-  font-family: "Poppins",sans-serif;
-}
+
 
 
 
@@ -53,9 +45,9 @@ body {
   background-color: #ffffff; /* Fondo blanco para el formulario */
   border-radius: 10px; /* Bordes redondeados para el formulario */
   margin: 40px auto; /* Centra el formulario en la página con un margen superior de 40px */
-  padding: 20px; /* Añade espacio interno al formulario */
+  padding: 70px; /* Añade espacio interno al formulario */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del formulario */
-  height: 400px;
+  height: 650px;
 }
 
 /* Estilos para el contenedor de la pregunta */

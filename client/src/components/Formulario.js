@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './Formulario.css';
+import Navbar from "./Navbar";
 
 // Componente Formulario
 const Formulario = () => {
@@ -13,11 +14,9 @@ const Formulario = () => {
     musica: "Me gusta mucho",
   });
 
-  // Define el estado para los mensajes de respuesta y la universidad recomendada
   const [responseMessage, setResponseMessage] = useState('');
   const [universidad, setUniversidad] = useState('');
 
-  // Maneja los cambios en los inputs del formulario
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -26,17 +25,14 @@ const Formulario = () => {
     });
   };
 
-  // Maneja el envío del formulario
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Evita el comportamiento por defecto del formulario (recargar la página)
+    event.preventDefault(); // Evita el comportamiento por defecto del formulario
 
     try {
-      // Envía los datos del formulario al backend
-      const response = await axios.post('http://localhost:3000/submitForm', formData);
-      // Actualiza el estado con el mensaje de respuesta y la universidad recomendada
+      const response = await axios.post('http://localhost:3000/guardar-informacion', formData);
       setResponseMessage(response.data.message);
-      setUniversidad(response.data.universidad || ''); // Verifica si la universidad fue proporcionada
-      // Restablece los campos del formulario
+      setUniversidad(response.data.universidad || '');
+      
       setFormData({
         tecnologia: "Me gusta mucho",
         deporte: "Me gusta mucho",
@@ -45,38 +41,60 @@ const Formulario = () => {
         musica: "Me gusta mucho"
       });
     } catch (error) {
-      // Maneja los errores en caso de que la solicitud falle
       setResponseMessage('Error al enviar el formulario');
       console.error('Error submitting form:', error);
     }
   };
 
-  // Renderiza el formulario con JSX
   return (
-      <>      
-      <div class="header">
-          <div class="logo-container">HODOS</div>
-            <ul class="navbar">
-                <li><a href="#">Sobre Nosotros</a></li>
-                <li><a href="#">Áreas de Interés</a></li>
-                <li><a href="#">Especialistas</a></li>
-            </ul>
-      </div>
+      <>    
+         <Navbar/>
+         
         
-          <div class="form-container">
-              <div class="question-container">
+      <div className="form-container">
+          <form onSubmit={handleSubmit}>
+              <div className="question-container">
                   <p>1. ¿Qué tan interesado estás en la tecnología?</p>
               </div>
-              <div class="options-container">
-                  <label><input type="radio" name="opcion" value="mucho" /> Me gusta mucho</label><br />
-                  <label><input type="radio" name="opcion" value="gusta"/> Me gusta</label><br/>
-                  <label><input type="radio" name="opcion" value="indiferente"/> Me es indiferente</label><br/>
-                  <label><input type="radio" name="opcion" value="no-me-gusta"/> No me gusta</label>
+              <div className="options-container">
+                  {["mucho", "gusta", "indiferente", "no-me-gusta"].map(option => (
+                    <label key={option}>
+                      <input 
+                        type="radio" 
+                        name="tecnologia" 
+                        value={option} 
+                        checked={formData.tecnologia === option}
+                        onChange={handleChange} 
+                      /> 
+                      {option === "mucho" ? "Me gusta mucho" : option === "gusta" ? "Me gusta" : option === "indiferente" ? "Me es indiferente" : "No me gusta"}
+                    </label>
+                  ))}
               </div>
-              <div class="button-container">
-                  <a href="Pregunta2.html" class="button">Siguiente</a> 
+              <div className="question-container">
+                  <p>2. ¿Qué tan interesado estás en los deportes?</p>
               </div>
-          </div>`
+              <div className="options-container">
+                  {["mucho", "gusta", "indiferente", "no-me-gusta"].map(option => (
+                    <label key={option}>
+                      <input 
+                        type="radio" 
+                        name="deporte" 
+                        value={option} 
+                        checked={formData.deporte === option}
+                        onChange={handleChange} 
+                      /> 
+                      {option === "mucho" ? "Me gusta mucho" : option === "gusta" ? "Me gusta" : option === "indiferente" ? "Me es indiferente" : "No me gusta"}
+                    </label>
+                  ))}
+              </div>
+              {/* Repite el bloque anterior por cada pregunta que tengas */}
+              <div className="button-container">
+              <button type="submit">Enviar</button> 
+              </div>
+          </form>
+          {responseMessage && <p>{responseMessage}</p>}
+          {universidad && <p>Universidad recomendada: {universidad}</p>}
+      </div>
     </>
   )
 }
