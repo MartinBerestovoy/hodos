@@ -1,37 +1,37 @@
 .navbar {
-    justify-content: space-between; 
+    justify-content: space-between;
     display: flex;
-    align-items: center; 
+    align-items: center;
     background-color: rgb(255, 255, 255);
-    padding: 25px 10px;
-    height: 60px;
-}
-.menu {
-    display: flex;
-    gap: 20px; 
+    padding: 25px 20px;
+    height: 80px;
+    max-width: auto;
+    height: 90px;
+    
     
 }
 
-.menu-item{
+.menu {
+    display: flex;
+   
+}
 
+.menu-item{
     font-size: 18px;
     padding: 10px 20px;
-    color: white;
+    color: black; /* Cambia el color a negro o el que prefieras para que no parezca un enlace */
     border-radius: 5px;
-
+    cursor: default; /* Cambia el cursor a default para que no parezca interactivo */
 }
 
 .menu-item:hover {
-
-    background-color: mediumslateblue;
-
+    background-color: transparent; /* Quita el cambio de fondo al hacer hover */
 }
-
 
 .logo {
    font-size: 24px;
    font-weight: bold;
    margin-top: 5px;
-   
-
+   width: 9;
+   height: 90px;
 }
