@@ -52,10 +52,11 @@ body {
     background-color: #3ab9b9; 
     color: white; 
     border: none;
-    border-radius: 5px; 
+    border-radius: 8px; 
     cursor: pointer; 
     font-size: 18px; 
     margin-right: 100px;
+    
     
 }
 
@@ -77,6 +78,7 @@ body {
     padding: 100px 20px;
     text-align: center;
     color: white;
+    text-decoration: none;
     
 }
 /* Contenedor del contenido de la introducción */
