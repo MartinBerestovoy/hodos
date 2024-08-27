@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleOkClick = () => {
-    navigate('/formulario');
+    navigate('/Formulario');
   };
 
   return (
