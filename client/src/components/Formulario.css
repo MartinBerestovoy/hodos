@@ -1,7 +1,7 @@
 /* Estilos generales para el cuerpo de la página */
 body {
   font-family: 'Work Sans', sans-serif; /* Define la fuente principal de la página */
-  background-color: #ECE9E9; /* Color de fondo para toda la página */
+  background-color: #e2e2e2; /* Color de fondo para toda la página */
   margin: 0; /* Elimina el margen por defecto del cuerpo */
   padding: 0; /* Elimina el relleno por defecto del cuerpo */
 }

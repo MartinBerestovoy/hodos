@@ -1,131 +1,160 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-import Header from "./Header";
-import MainHeading from "./MainHeading";
-import History from "./History";
-import TestTaken from "./TestTaken";
-import Faqs from "./Faqs";
-import Footer from "./Footer";
+import './Formulario.css';
+import Navbar from "./Navbar";
 
-const Home = () => {
+// Componente Formulario
+const Formulario = () => {
 
-  const [questions, setQuestions] = useState([
-    {
-      id: 1,
-      question: "1. ¿Qué tan interesado estás en la tecnología?",
-      options: ["Me gusta mucho", "Me gusta", "Me es indiferente", "No me gusta"],
-    },
-    {
-      id: 2,
-      question: "2. ¿Qué tan interesado estás en los deportes?",
-      options: ["Me gusta mucho", "Me gusta", "Me es indiferente", "No me gusta"],
-    },
-    {
-      id: 3,
-      question: "3. ¿Qué tan interesado estás en la lectura?",
-      options: ["Me gusta mucho", "Me gusta", "Me es indiferente", "No me gusta"],
-    },
-    {
-      id: 4,
-      question: "4. ¿Qué tan interesado estás en viajar?",
-      options: ["Me gusta mucho", "Me gusta", "Me es indiferente", "No me gusta"],
-    },
-    {
-      id: 5,
-      question: "5. ¿Qué tan interesado estás en la música?",
-      options: ["Me gusta mucho", "Me gusta", "Me es indiferente", "No me gusta"],
-    },
-  ]);
+  // Define el estado inicial del formulario con campos para cada pregunta de interés
+  const [formData, setFormData] = useState({
+    tecnologia: "Me gusta mucho",
+    deporte: "Me gusta mucho",
+    lectura: "Me gusta mucho",
+    viajar: "Me gusta mucho",
+    musica: "Me gusta mucho",
+  });
 
-  const [enableSubmit, setEnableSubmit] = useState(false);
+  const [responseMessage, setResponseMessage] = useState('');
+  const [universidad, setUniversidad] = useState('');
 
-  const [final, setFinal] = useState([]);
-
-  const [selections, setSelections] = useState(Array(5).fill(null));
-
-  const history = useHistory();
-
-
-  const handleChange = (index, event) => {
-    const updatedSelections = [...selections];
-    updatedSelections[index] = event.target.value;
-    setSelections(updatedSelections);
-
-    setEnableSubmit(updatedSelections.every(selection => selection !== null));
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-
-  const submitHandler = async (event) => {
-    event.preventDefault();
-
-    if (!enableSubmit) return;
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Evita el comportamiento por defecto del formulario
 
     try {
-      const result = calculatePersonalityResults(selections);
-      const finalPrediction = await personalPredictor(result);
+      const response = await axios.post('https://hodos-server-git-main-martinberestovoys-projects.vercel.app//guardar-informacion', formData);
+      setResponseMessage(response.data.message);
+      setUniversidad(response.data.universidad || '');
 
-      if (finalPrediction) {
-        setFinal(finalPrediction);
-        history.push({
-          pathname: "/predictions",
-          state: { result, finalPrediction },
-        });
-      }
+      setFormData({
+        tecnologia: "Me gusta mucho",
+        deporte: "Me gusta mucho",
+        lectura: "Me gusta mucho",
+        viajar: "Me gusta mucho",
+        musica: "Me gusta mucho"
+      });
     } catch (error) {
+      setResponseMessage('Error al enviar el formulario');
       console.error('Error submitting form:', error);
-      alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
-    }
-  };
-
-  const calculatePersonalityResults = (selections) => {
-    const traits = ["Tecnología", "Deportes", "Lectura", "Viajar", "Música"];
-    const scores = traits.map(trait => filteration(selections, trait));
-    return scores;
-  };
-
-  const filteration = (selections, trait) => {
-    return selections.reduce((acc, selection, index) => {
-      acc += selection === "Me gusta mucho" ? 4 : selection === "Me gusta" ? 3 : selection === "Me es indiferente" ? 2 : 1;
-      return acc;
-    }, 0);
-  };
-
-
-  const personalPredictor = async (result) => {
-    try {
-      const response = await axios.post('https://hodos-server-git-main-martinberestovoys-projects.vercel.app/guardar-informacion', { result });
-      return response.data.finalPrediction;
-    } catch (error) {
-      throw new Error('Error contacting the prediction API');
     }
   };
 
   return (
-    <div id="home">
-      <Header />
-      <MainHeading />
-      <History />
-      <TestTaken />
-      <form onSubmit={submitHandler}>
-        {questions.map((question, index) => (
-          <div key={question.id} className="question-container">
-            <p>{question.question}</p>
-            <div className="options-container">
-              {question.options.map((option, i) => (
-                <label key={i}>
-                  <input
-                    type="radio"
-                    name={`question${question.id}`}
-                    value={option}
-                    checked={selections[index] === option}
-                    onChange={(e) => handleChange(index, e)}
-                  />
-                  {option}
-                </label>
-              ))}
-            </div>
-          </div>
-        ))}
-        <
- export default Formulario;
+      <>   
+         <Navbar/>
+
+
+      <div className="form-container">
+          <form onSubmit={handleSubmit}>
+              <div className="question-container">
+                  <p>1. ¿Qué tan interesado estás en la tecnología?</p>
+              </div>
+              <div className="options-container">
+                  {["mucho", "gusta", "indiferente", "no-me-gusta"].map(option => (
+                    <label key={option}>
+                      <input
+                        type="radio"
+                        name="tecnologia"
+                        value={option}
+                        checked={formData.tecnologia === option}
+                        onChange={handleChange}
+                      />
+                      {option === "mucho" ? "Me gusta mucho" : option === "gusta" ? "Me gusta" : option === "indiferente" ? "Me es indiferente" : "No me gusta"}
+                    </label>
+                  ))}
+              </div>
+
+              <div className="question-container">
+                  <p>2. ¿Qué tan interesado estás en los deportes?</p>
+              </div>
+              <div className="options-container">
+                  {["mucho", "gusta", "indiferente", "no-me-gusta"].map(option => (
+                    <label key={option}>
+                      <input
+                        type="radio"
+                        name="deporte"
+                        value={option}
+                        checked={formData.deporte === option}
+                        onChange={handleChange}
+                      />
+                      {option === "mucho" ? "Me gusta mucho" : option === "gusta" ? "Me gusta" : option === "indiferente" ? "Me es indiferente" : "No me gusta"}
+                    </label>
+                  ))}
+              </div>
+
+              <div className="question-container">
+                  <p>3. ¿Qué tan interesado estás en la lectura?</p>
+              </div>
+              <div className="options-container">
+                  {["mucho", "gusta", "indiferente", "no-me-gusta"].map(option => (
+                    <label key={option}>
+                      <input
+                        type="radio"
+                        name="lectura"
+                        value={option}
+                        checked={formData.lectura === option}
+                        onChange={handleChange}
+                      />
+                      {option === "mucho" ? "Me gusta mucho" : option === "gusta" ? "Me gusta" : option === "indiferente" ? "Me es indiferente" : "No me gusta"}
+                    </label>
+                  ))}
+              </div>
+
+              <div className="question-container">
+                  <p>4. ¿Qué tan interesado estás en viajar?</p>
+              </div>
+              <div className="options-container">
+                  {["mucho", "gusta", "indiferente", "no-me-gusta"].map(option => (
+                    <label key={option}>
+                      <input
+                        type="radio"
+                        name="viajar"
+                        value={option}
+                        checked={formData.viajar === option}
+                        onChange={handleChange}
+                      />
+                      {option === "mucho" ? "Me gusta mucho" : option === "gusta" ? "Me gusta" : option === "indiferente" ? "Me es indiferente" : "No me gusta"}
+                    </label>
+                  ))}
+              </div>
+
+              <div className="question-container">
+                  <p>5. ¿Qué tan interesado estás en la música?</p>
+              </div>
+              <div className="options-container">
+                  {["mucho", "gusta", "indiferente", "no-me-gusta"].map(option => (
+                    <label key={option}>
+                      <input
+                        type="radio"
+                        name="musica"
+                        value={option}
+                        checked={formData.musica === option}
+                        onChange={handleChange}
+                      />
+                      {option === "mucho" ? "Me gusta mucho" : option === "gusta" ? "Me gusta" : option === "indiferente" ? "Me es indiferente" : "No me gusta"}
+                    </label>
+                  ))}
+              </div>
+
+              <div className="button-container">
+              <button type="submit">Enviar</button>
+              </div>
+          </form>
+          {responseMessage && <p>{responseMessage}</p>}
+          {universidad && <p>Universidad recomendada: {universidad}</p>}
+      </div>
+    </>
+  )
+}
+
+// Exporta el componente para que pueda ser usado en otros archivos
+export default Formulario;
+
