@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import './Formulario.css';
 import Navbar from "./Navbar";
+import Questions from "./Questions";
 
 // Componente Formulario
 const Formulario = () => {

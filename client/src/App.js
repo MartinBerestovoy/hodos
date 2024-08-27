@@ -14,6 +14,7 @@ function App() {
         <Route path="/formulario" element={<Formulario />} />
         <Route path="/prueba" element={<Prueba />} />
         <Route path="/inicio" element={<Inicio />} />
+        <Route path="/prediction" component={Prediction} />
       </Routes>
     </Router>
   );
