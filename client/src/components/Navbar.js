@@ -8,9 +8,10 @@ function Navbar() {
     <div className="logo">
     <img src="/LOGO.jpg" alt="HODOS"/>
     </div>
-    <div class="navbar-menu">
-      <a href="SobreNosotros.html" class="button">Sobre Nosotros</a>
-      <a href="#especialistas">Especialistas</a>
+    <div class="menu">
+      <span className="menu-item">Sobre Nosotros</span>
+      <span className="menu-item">Especialistas</span>
+      <span className="menu-item">Areas de Interes</span>
       <button class="navbar-toggle">
         <span class="navbar-toggle-icon">&#9776;</span>
       </button>

@@ -23,6 +23,7 @@ body {
    color: #134590;
    font-family: sans-serif;
    display: flex; 
+   padding: 50px;
 
 }
 
@@ -42,6 +43,8 @@ body {
 }
 
 /* Estilos para el botón */
+
+
 .button {
     padding: 10px 20px; 
     background-color: #3ab9b9; 
@@ -50,7 +53,8 @@ body {
     border-radius: 5px; 
     cursor: pointer; 
     font-size: 18px; 
-    margin-top: 20px; 
+    margin-top: 80px; 
+    margin-right: 100px;
     
 }
 
