@@ -104,10 +104,20 @@ app.listen(port, () => {
 
 function save_AI(req, res) {
 	console.log(req.body);
-	const { O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude,AbstractReasoning, VerbalReasoning, carrer } = req.body; //nombre tabla 
-
+	const { O_score, C_score, E_score, A_score, N_score, NumericalAptitude , SpatialAptitude, PerceptualAptitude,AbstractReasoning, VerbalReasoning, carrer } = req.body; //nombre tabla 
+//O_score 
+//C_score 
+//E_score 
+//A_score 
+//N_score 
+//NumericalAptitude 
+//SpatialAptitude 
+//PerceptualAptitude 
+//AbstractReasoning 
+//VerbalReasoning
+//carrer
 	// Realizar la inserción en la base de datos
-	connection.query("INSERT INTO test  (O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer ], (err, result) => {
+	connection.query("INSERT INTO test  (O_score, C_score, E_score, A_score, N_score, NumericalAptitude , SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)", [O_score, C_score, E_score, A_score, N_score, NumericalAptitude , SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer ], (err, result) => {
 		if (err) {
 			console.error("Error al guardar la información:", err);
 			res.status(500).send("Error al guardar la información en la base de datos");
