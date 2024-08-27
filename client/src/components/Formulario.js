@@ -31,9 +31,12 @@ const Formulario = () => {
 
     try {
       const response = await axios.post('https://hodos-server-git-main-martinberestovoys-projects.vercel.app//guardar-informacion', formData);
-      setResponseMessage(response.data.message);
+
+      // Actualizar los estados para mostrar mensajes de éxito
+      setResponseMessage('Formulario enviado exitosamente');
       setUniversidad(response.data.universidad || '');
 
+      // Restablecer el formulario a sus valores iniciales
       setFormData({
         tecnologia: "Me gusta mucho",
         deporte: "Me gusta mucho",
@@ -50,7 +53,6 @@ const Formulario = () => {
   return (
       <>   
          <Navbar/>
-
 
       <div className="form-container">
           <form onSubmit={handleSubmit}>
@@ -152,9 +154,8 @@ const Formulario = () => {
           {universidad && <p>Universidad recomendada: {universidad}</p>}
       </div>
     </>
-  )
+  );
 }
 
 // Exporta el componente para que pueda ser usado en otros archivos
 export default Formulario;
-

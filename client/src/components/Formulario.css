@@ -6,48 +6,20 @@ body {
   padding: 0; /* Elimina el relleno por defecto del cuerpo */
 }
 
-/* Contenedor principal que agrupa logo y barra de navegación */
 
 
 
 
-/* Estilos para el contenedor del logo */
-.logo-container {
-  font-size: 36px; /* Tamaño del logo */
-  color: #37b5b6; /* Color del texto del logo */
-  font-weight: bold; /* Negrita en el logo */
-}
-
-/* Estilos para la barra de navegación */
-.navbar {
-  display: flex; /* Usa flexbox para organizar los enlaces en línea */
-  list-style: none; /* Elimina los puntos de la lista */
-  margin: 0; /* Elimina los márgenes por defecto */
-  padding: 0; /* Elimina los rellenos por defecto */
-  
-}
-
-.navbar li {
-  margin-right: 20px; /* Añade espacio entre los enlaces */
-}
-
-.navbar li a {
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-  color: #000; /* Color negro para los enlaces */
-  box-shadow: none; /* Sombra suave alrededor del formulario */
-
-  
-}
 
 /* Estilos para el contenedor del formulario */
 .form-container {
-  width: 700px; /* Establece el ancho del formulario */
+  width: 800px; /* Establece el ancho del formulario */
   background-color: #ffffff; /* Fondo blanco para el formulario */
   border-radius: 10px; /* Bordes redondeados para el formulario */
   margin: 40px auto; /* Centra el formulario en la página con un margen superior de 40px */
   padding: 70px; /* Añade espacio interno al formulario */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del formulario */
-  height: 650px;
+  height: 1050px;
 }
 
 /* Estilos para el contenedor de la pregunta */
@@ -79,7 +51,7 @@ body {
   -moz-appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #134590; /* Borde azul oscuro */
+  border: 4px solid #134590; /* Borde azul oscuro */
   border-radius: 50%; /* Bordes redondeados para el radio button */
   margin-right: 10px; /* Espacio entre el radio button y el texto */
   outline: none;
