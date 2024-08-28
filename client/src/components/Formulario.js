@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import axios from "axios";
-import './Formulario.css';
-import Navbar from "./Navbar";
+import React, { useState } from "react"; // Importa React y el hook useState para manejar el estado
+import axios from "axios"; // Importa Axios para hacer solicitudes HTTP
+import './Formulario.css'; // Importa los estilos CSS específicos para el formulario
+import Navbar from "./Navbar"; // Importa el componente de navegación
 
 // Componente Formulario
 const Formulario = () => {
-
   // Define el estado inicial del formulario con campos para las 50 preguntas
   const [formData, setFormData] = useState({
     opcion1: "",
@@ -47,16 +46,6 @@ const Formulario = () => {
     opcion37: "",
     opcion38: "",
     opcion39: "",
-    opcion30: "",
-    opcion31: "",
-    opcion32: "",
-    opcion33: "",
-    opcion34: "",
-    opcion35: "",
-    opcion36: "",
-    opcion37: "",
-    opcion38: "",
-    opcion39: "",
     opcion40: "",
     opcion41: "",
     opcion42: "",
@@ -70,10 +59,10 @@ const Formulario = () => {
     opcion50: "",
   });
 
-  const [responseMessage, setResponseMessage] = useState('');
-  const [universidad, setUniversidad] = useState('');
+  const [responseMessage, setResponseMessage] = useState(''); // Estado para manejar el mensaje de respuesta
+  const [areaRecomendada, setAreaRecomendada] = useState(''); // Estado para manejar el área recomendada
 
-  // Lista de preguntas
+  // Lista de preguntas (50 preguntas)
   const preguntas = [
     "Soy el alma de la fiesta.",
     "Me preocupo poco por los demás.",
@@ -127,12 +116,49 @@ const Formulario = () => {
     "Tengo muchas ideas.",
   ];
 
+  // Mapeo de preguntas a cada factor OCEAN
+  const oceanMapping = {
+    Openness: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], // Preguntas para Openness
+    Conscientiousness: [3, 8, 13, 18, 23, 28, 33, 38, 43, 48], // Preguntas para Conscientiousness
+    Extraversion: [1, 6, 11, 16, 21, 26, 31, 36, 41, 46], // Preguntas para Extraversion
+    Agreeableness: [2, 7, 12, 17, 22, 27, 32, 37, 42, 47], // Preguntas para Agreeableness
+    Neuroticism: [4, 9, 14, 19, 24, 29, 34, 39, 44, 49], // Preguntas para Neuroticism
+  };
+
+  // Función para calcular el promedio de todas las respuestas
+  const calculateAverageScore = () => {
+    const totalScore = Object.values(formData).reduce((acc, curr) => acc + (parseInt(curr, 10) || 0), 0); // Suma todos los valores de las respuestas
+    return totalScore / preguntas.length; // Calcula el promedio
+  };
+
+  // Función para calcular los puntajes OCEAN
+  const calculateOceanScores = () => {
+    const scores = {
+      Openness: 0,
+      Conscientiousness: 0,
+      Extraversion: 0,
+      Agreeableness: 0,
+      Neuroticism: 0,
+    };
+
+    // Calcular puntajes sumando las respuestas correspondientes a cada factor
+    for (let factor in oceanMapping) {
+      oceanMapping[factor].forEach(questionIndex => {
+        scores[factor] += parseInt(formData[`opcion${questionIndex}`], 10) || 0; // Suma las respuestas
+      });
+      // Calcula el promedio de cada factor
+      scores[factor] = scores[factor] / oceanMapping[factor].length;
+    }
+
+    return scores; // Devuelve los puntajes promedio
+  };
+
   // Manejar cambios en los inputs de radio
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target; // Extrae el nombre y valor del input
     setFormData({
-      ...formData,
-      [name]: value,
+      ...formData, // Copia el estado actual del formulario
+      [name]: value, // Actualiza el valor de la opción seleccionada
     });
   };
 
@@ -140,43 +166,94 @@ const Formulario = () => {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Evita el comportamiento por defecto del formulario
 
+    // Calcular puntajes OCEAN y promedio general antes de enviar
+    const oceanScores = calculateOceanScores();
+    const averageScore = calculateAverageScore();
+
     try {
       // Enviar datos al backend
-      const response = await axios.post('https://hodos-server-git-main-martinberestovoys-projects.vercel.app/guardar-informacion', formData);
+      const response = await axios.post('https://hodos-server-git-main-martinberestovoys-projects.vercel.app/guardar-informacion', { oceanScores, averageScore });
 
       // Actualizar los estados para mostrar mensajes de éxito
       setResponseMessage('Formulario enviado exitosamente');
-      setUniversidad(response.data.universidad || '');
+      setAreaRecomendada(response.data.areaRecomendada || '');
 
       // Restablecer el formulario a sus valores iniciales
       setFormData({
         opcion1: "",
         opcion2: "",
-        // ...
+        opcion3: "",
+        opcion4: "",
+        opcion5: "",
+        opcion6: "",
+        opcion7: "",
+        opcion8: "",
+        opcion9: "",
+        opcion10: "",
+        opcion11: "",
+        opcion12: "",
+        opcion13: "",
+        opcion14: "",
+        opcion15: "",
+        opcion16: "",
+        opcion17: "",
+        opcion18: "",
+        opcion19: "",
+        opcion20: "",
+        opcion21: "",
+        opcion22: "",
+        opcion23: "",
+        opcion24: "",
+        opcion25: "",
+        opcion26: "",
+        opcion27: "",
+        opcion28: "",
+        opcion29: "",
+        opcion30: "",
+        opcion31: "",
+        opcion32: "",
+        opcion33: "",
+        opcion34: "",
+        opcion35: "",
+        opcion36: "",
+        opcion37: "",
+        opcion38: "",
+        opcion39: "",
+        opcion40: "",
+        opcion41: "",
+        opcion42: "",
+        opcion43: "",
+        opcion44: "",
+        opcion45: "",
+        opcion46: "",
+        opcion47: "",
+        opcion48: "",
+        opcion49: "",
         opcion50: "",
       });
     } catch (error) {
-      setResponseMessage('Error al enviar el formulario');
-      console.error('Error submitting form:', error);
+      setResponseMessage('Error al enviar el formulario'); // Muestra un mensaje de error
+      console.error('Error submitting form:', error); // Muestra el error en la consola
     }
   };
 
   return (
-    <>   
-      <Navbar/>
-      <form onSubmit={handleSubmit} className="form-container">
+    <>
+      <Navbar /> {/* Renderiza el componente de navegación */}
+      <form onSubmit={handleSubmit} className="form-container"> {/* Manejador de envío de formulario */}
         {preguntas.map((pregunta, index) => (
           <div key={index}>
             <div className="question-container">
-              <p>{index + 1}. {pregunta}</p>
+              <p>{index + 1}. {pregunta}</p> {/* Muestra cada pregunta con su número */}
             </div>
             <div className="options-container">
+              {/* Botones de radio para cada opción de respuesta */}
               <label>
                 <input
                   type="radio"
                   name={`opcion${index + 1}`}
                   value="5"
-                  onChange={handleChange}
+                  onChange={handleChange} // Maneja el cambio de selección de opción
                 />{" "}
                 Me representa mucho
               </label>
@@ -186,7 +263,7 @@ const Formulario = () => {
                   type="radio"
                   name={`opcion${index + 1}`}
                   value="4"
-                  onChange={handleChange}
+                  onChange={handleChange} // Maneja el cambio de selección de opción
                 />{" "}
                 Me representa
               </label>
@@ -196,7 +273,7 @@ const Formulario = () => {
                   type="radio"
                   name={`opcion${index + 1}`}
                   value="3"
-                  onChange={handleChange}
+                  onChange={handleChange} // Maneja el cambio de selección de opción
                 />{" "}
                 Me es indiferente
               </label>
@@ -206,7 +283,7 @@ const Formulario = () => {
                   type="radio"
                   name={`opcion${index + 1}`}
                   value="2"
-                  onChange={handleChange}
+                  onChange={handleChange} // Maneja el cambio de selección de opción
                 />{" "}
                 No me representa
               </label>
@@ -216,7 +293,7 @@ const Formulario = () => {
                   type="radio"
                   name={`opcion${index + 1}`}
                   value="1"
-                  onChange={handleChange}
+                  onChange={handleChange} // Maneja el cambio de selección de opción
                 />{" "}
                 No me representa en absoluto
               </label>
@@ -224,16 +301,14 @@ const Formulario = () => {
           </div>
         ))}
         <div className="button-container">
-          <button type="submit">Enviar</button>
+          <button type="submit">Enviar</button> {/* Botón para enviar el formulario */}
         </div>
       </form>
-      {responseMessage && <p>{responseMessage}</p>}
-      {universidad && <p>Universidad recomendada: {universidad}</p>}
+      {responseMessage && <p>{responseMessage}</p>} {/* Muestra el mensaje de respuesta si existe */}
+      {areaRecomendada && <p>Área recomendada: {areaRecomendada}</p>} {/* Muestra el área recomendada si existe */}
     </>
   );
 }
 
 // Exporta el componente para que pueda ser usado en otros archivos
 export default Formulario;
-
-
