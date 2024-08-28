@@ -41,6 +41,7 @@ const Formulario = () => {
     opcion32: "",
     opcion33: "",
     opcion34: "",
+    opcion34: "",
     opcion35: "",
     opcion36: "",
     opcion37: "",
@@ -143,7 +144,7 @@ const Formulario = () => {
 
     // Calcular puntajes sumando las respuestas correspondientes a cada factor
     for (let factor in oceanMapping) {
-      oceanMapping[factor].forEach(questionIndex => {
+      oceanMapping[factor].forEach((questionIndex) => {
         scores[factor] += parseInt(formData[`opcion${questionIndex}`], 10) || 0; // Suma las respuestas
       });
       // Calcula el promedio de cada factor
@@ -170,16 +171,17 @@ const Formulario = () => {
     const oceanScores = calculateOceanScores();
     const averageScore = calculateAverageScore();
 
-    const dataToSend = {
-      oceanScores,
-      averageScore,
-      
-    };
-  
-
     try {
-      // Enviar datos al backend
-      const response = await axios.post('https://hodos-server-git-main-martinberestovoys-projects.vercel.app/guardar-informacion', { oceanScores, averageScore });
+      // Convertir los datos a JSON y enviar al backend
+      const response = await axios.post(
+        'https://hodos-server-git-main-martinberestovoys-projects.vercel.app/guardar-informacion',
+        JSON.stringify({ oceanScores, averageScore }), // Convertir a JSON
+        {
+          headers: {
+            'Content-Type': 'application/json', // Establecer el tipo de contenido como JSON
+          },
+        }
+      );
 
       // Actualizar los estados para mostrar mensajes de éxito
       setResponseMessage('Formulario enviado exitosamente');
@@ -319,3 +321,5 @@ const Formulario = () => {
 
 // Exporta el componente para que pueda ser usado en otros archivos
 export default Formulario;
+
+
