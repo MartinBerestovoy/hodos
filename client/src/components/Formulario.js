@@ -170,6 +170,13 @@ const Formulario = () => {
     const oceanScores = calculateOceanScores();
     const averageScore = calculateAverageScore();
 
+    const dataToSend = {
+      oceanScores,
+      averageScore,
+      
+    };
+  
+
     try {
       // Enviar datos al backend
       const response = await axios.post('https://hodos-server-git-main-martinberestovoys-projects.vercel.app/guardar-informacion', { oceanScores, averageScore });
