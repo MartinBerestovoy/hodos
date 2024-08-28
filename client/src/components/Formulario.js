@@ -173,7 +173,7 @@ const Formulario = () => {
     try {
       // Convertir los datos a JSON y enviar al backend
       const response = await axios.post(
-        'https://hodos-server.vercel.app/guardar-front',
+        'https://hodos-server.vercel.app//guardar-porcentaje',
         JSON.stringify({ oceanScores, averageScore }), // Convertir a JSON
         {
           headers: {
