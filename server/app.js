@@ -179,7 +179,7 @@ app.use((req, res, next) => {
 });
 
 // Define tus rutas aquí
-app.get('/guardar-porsentaje', (req, res) => {
+app.get('/guardar-porcentaje', (req, res) => {
     res.send('se arreglo?');
 });
 
