@@ -151,3 +151,5 @@ function save_Front(req, res) {
 
 };	
 app.post('/guardar-Front', save_Front); //llamo a la funcion
+
+//https://hodos-server.vercel.app/guardar-front  la ruta para mandar la info
