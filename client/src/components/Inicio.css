@@ -11,10 +11,11 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  text-align: center;
+  text-align: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   height: 350px;
   width: 700px;
+  margin-top: 20px;
 }
 
 .inicio-button {
@@ -25,6 +26,10 @@
   color: white;
   border-radius: 4px;
   cursor: pointer;
+  height: 40px;
+  margin-top: 170px;
+  margin-left: 650px;
+  
 }
 
 .inicio-button:hover {
@@ -34,4 +39,16 @@
 .highlight {
   color: #0367aa;
 }
+
+.inicio-box p {
+  color: #000000;
+  font-size: 20px;
+}
+
+.inicio-box h2 {
+  color: #134590;
+  font-size: 30px;
+}
+
+
 
