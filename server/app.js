@@ -105,17 +105,7 @@ app.listen(port, () => {
 function save_AI(req, res) {
 	console.log(req.body);
 	const { O_score, C_score, E_score, A_score, N_score, NumericalAptitude , SpatialAptitude, PerceptualAptitude,AbstractReasoning, VerbalReasoning, carrer } = req.body; //nombre tabla 
-//O_score 
-//C_score 
-//E_score 
-//A_score 
-//N_score 
-//NumericalAptitude 
-//SpatialAptitude 
-//PerceptualAptitude 
-//AbstractReasoning 
-//VerbalReasoning
-//carrer
+
 	// Realizar la inserción en la base de datos
 	connection.query("INSERT INTO test (O_score, C_score, E_score, A_score, N_score, NumericalAptitude, SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)", [O_score, C_score, E_score, A_score, N_score, NumericalAptitude , SpatialAptitude, PerceptualAptitude, AbstractReasoning, VerbalReasoning, carrer ], (err, result) => {
 		if (err) {
@@ -131,7 +121,7 @@ function save_AI(req, res) {
 };	
 app.post('/guardar-ai', save_AI); //llamo a la funcion
 
-
+//https://hodos-server.vercel.app/guardar-ai --> ruta 
 
 function save_Front(req, res) {
 	console.log(req.body);
@@ -153,3 +143,21 @@ function save_Front(req, res) {
 app.post('/guardar-Front', save_Front); //llamo a la funcion
 
 //https://hodos-server.vercel.app/guardar-front  la ruta para mandar la info
+
+function save_porcentaje (req, res) {
+	console.log(req.body);
+	const { averageScore } = req.body; //nombre tabla 
+
+	// Realizar la inserción en la base de datos
+	connection.query("INSERT INTO porcentaje (averageScore) VALUES ($1)", [averageScore ], (err, result) => {
+		if (err) {
+			console.error("Error al guardar la información:", err);
+			res.status(500).send("Error al guardar la información en la base de datos");
+			return;
+		}
+		console.log("Información guardada correctamente en la base de datos");
+		res.status(200).send("Información guardada correctamente");
+	});}
+	app.post('/guardar-porcentaje', save_porcentaje); //llamo a la funcion
+
+	
