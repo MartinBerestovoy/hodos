@@ -4,6 +4,8 @@ import connection from './conexion.js';
 import { createServer } from 'http';
 import fetch from 'node-fetch';
 
+
+
 // import connection from "../conexion.js"
 
 // async function fetchData() {
@@ -160,4 +162,24 @@ function save_porcentaje (req, res) {
 	});}
 	app.post('/guardar-porcentaje', save_porcentaje); //llamo a la funcion
 
+	//https://hodos-server.vercel.app//guardar-porcentaje --> ruta
+
+	//desactivar cors
+
 	
+const express = require('express');
+const app = express();
+
+// Este middleware debe ir antes de las rutas
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*"); // Permitir todos los orígenes
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+// Define tus rutas aquí
+app.get('/guardar-porsentaje', (req, res) => {
+    res.send('se arreglo?');
+});
+
