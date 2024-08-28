@@ -41,7 +41,6 @@ const Formulario = () => {
     opcion32: "",
     opcion33: "",
     opcion34: "",
-    opcion34: "",
     opcion35: "",
     opcion36: "",
     opcion37: "",
@@ -174,7 +173,7 @@ const Formulario = () => {
     try {
       // Convertir los datos a JSON y enviar al backend
       const response = await axios.post(
-        'https://hodos-server-git-main-martinberestovoys-projects.vercel.app/guardar-informacion',
+        'https://hodos-server.vercel.app/guardar-front',
         JSON.stringify({ oceanScores, averageScore }), // Convertir a JSON
         {
           headers: {
