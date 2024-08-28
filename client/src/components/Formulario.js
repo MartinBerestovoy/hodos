@@ -173,15 +173,19 @@ const Formulario = () => {
     try {
       // Convertir los datos a JSON y enviar al backend
       const response = await axios.post(
-        'https://hodos-server.vercel.app//guardar-porcentaje',
+        'https://hodos-server.vercel.app/guardar-porcentaje',
         JSON.stringify({ oceanScores, averageScore }), // Convertir a JSON
         {
           headers: {
             'Content-Type': 'application/json', // Establecer el tipo de contenido como JSON
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST',
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
           },
         }
+        
       );
-
+      console.log("Hola");
       // Actualizar los estados para mostrar mensajes de éxito
       setResponseMessage('Formulario enviado exitosamente');
       setAreaRecomendada(response.data.areaRecomendada || '');
