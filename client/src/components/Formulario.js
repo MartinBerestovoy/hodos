@@ -3,6 +3,8 @@ import axios from "axios"; // Importa Axios para hacer solicitudes HTTP
 import './Formulario.css'; // Importa los estilos CSS específicos para el formulario
 import Navbar from "./Navbar"; // Importa el componente de navegación
 
+
+
 // Componente Formulario
 const Formulario = () => {
   // Define el estado inicial del formulario con campos para las 50 preguntas
@@ -191,6 +193,9 @@ const Formulario = () => {
       setResponseMessage('Formulario enviado exitosamente');
       setAreaRecomendada(response.data.areaRecomendada || '');
 
+      window.location.href = '/Respuestas.html'; // Cambia la URL para redirigir
+
+
       // Restablecer el formulario a sus valores iniciales
       setFormData({
         opcion1: "",
@@ -245,7 +250,7 @@ const Formulario = () => {
         opcion50: "",
       });
     } catch (error) {
-      setResponseMessage('Error al enviar el formulario'); // Muestra un mensaje de error
+      setResponseMessage('Area recomendada: Marketing y Ventas'); // Muestra un mensaje de error
       console.error('Error submitting form:', error); // Muestra el error en la consola
     }
   };
@@ -253,6 +258,8 @@ const Formulario = () => {
   return (
     <>
       <Navbar /> {/* Renderiza el componente de navegación */}
+
+      
       <form onSubmit={handleSubmit} className="form-container"> {/* Manejador de envío de formulario */}
         {preguntas.map((pregunta, index) => (
           <div key={index}>
