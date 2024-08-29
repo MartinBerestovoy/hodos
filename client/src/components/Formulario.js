@@ -180,7 +180,8 @@ const Formulario = () => {
             'Content-Type': 'application/json', // Establecer el tipo de contenido como JSON
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST',
-            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+            'Access-Control-Allow-Credentials': 'false'
           },
         }
         

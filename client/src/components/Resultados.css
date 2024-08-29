@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    display: flex; /* Establecer Flexbox para centrar todo el cuerpo */
+    justify-content: center; /* Centrar horizontalmente el contenedor */
+    align-items: center; /* Centrar verticalmente el contenedor */
+    height: 100vh; /* Altura del 100% de la vista */
+    margin: 0; /* Eliminar márgenes */
+  }
+  
+  .container {
+    text-align: center; /* Centrar texto */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto 3D */
+    width: 300px; /* Ancho fijo */
+    max-width: 80%; /* Asegura que el contenedor sea responsivo */
+    height: 300px; /* Altura del contenedor */
+    display: flex; /* Flexbox para alinear el contenido */
+    flex-direction: column; /* Colocar los elementos en columna */
+    justify-content: flex-start; /* Comienza desde la parte superior */
+    align-items: center; /* Centrar contenido horizontalmente */
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+    margin-top: 40px; /* Agrega margen superior para bajar el título */
+  }
+  
+  .checkbox {
+    display: none; /* Ocultar checkbox */
+  }
+  
+  .btn {
+    background-color: #007bff; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor a mano */
+    font-size: 16px; /* Tamaño del texto */
+    margin: 10px 0; /* Espaciado vertical para separación */
+    text-align: center; /* Centrar texto */
+    text-decoration: none; /* Sin subrayado */
+    width: 150px; /* Ancho fijo para consistencia */
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el ratón */
+  }
+  
+  .resultados {
+    margin-top: 20px;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  
+  
