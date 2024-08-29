@@ -3,8 +3,6 @@ import axios from "axios"; // Importa Axios para hacer solicitudes HTTP
 import './Formulario.css'; // Importa los estilos CSS específicos para el formulario
 import Navbar from "./Navbar"; // Importa el componente de navegación
 
-
-
 // Componente Formulario
 const Formulario = () => {
   // Define el estado inicial del formulario con campos para las 50 preguntas
@@ -192,9 +190,6 @@ const Formulario = () => {
       // Actualizar los estados para mostrar mensajes de éxito
       setResponseMessage('Formulario enviado exitosamente');
       setAreaRecomendada(response.data.areaRecomendada || '');
-
-      window.location.href = '/Respuestas.html'; // Cambia la URL para redirigir
-
 
       // Restablecer el formulario a sus valores iniciales
       setFormData({
