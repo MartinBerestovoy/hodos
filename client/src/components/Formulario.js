@@ -186,7 +186,7 @@ const Formulario = () => {
         }
         
       );
-      console.log("Hola");
+     
       // Actualizar los estados para mostrar mensajes de éxito
       setResponseMessage('Formulario enviado exitosamente');
       setAreaRecomendada(response.data.areaRecomendada || '');
