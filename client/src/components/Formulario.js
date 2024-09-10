@@ -245,7 +245,7 @@ const Formulario = () => {
         opcion50: "",
       });
     } catch (error) {
-      setResponseMessage('Area recomendada: Marketing y Ventas'); // Muestra un mensaje de error
+      setResponseMessage('error al enviar el formulario'); // Muestra un mensaje de error
       console.error('Error submitting form:', error); // Muestra el error en la consola
     }
   };
