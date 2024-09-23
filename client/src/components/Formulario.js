@@ -61,6 +61,7 @@ const Formulario = () => {
 
   const [responseMessage, setResponseMessage] = useState(''); // Estado para manejar el mensaje de respuesta
   const [areaRecomendada, setAreaRecomendada] = useState(''); // Estado para manejar el área recomendada
+  const navigate = useNavigate();
 
   // Lista de preguntas (50 preguntas)
   const preguntas = [
@@ -190,6 +191,8 @@ const Formulario = () => {
       // Actualizar los estados para mostrar mensajes de éxito
       setResponseMessage('Formulario enviado exitosamente');
       setAreaRecomendada(response.data.areaRecomendada || '');
+
+      navigate('/universidades'); 
 
       // Restablecer el formulario a sus valores iniciales
       setFormData({
