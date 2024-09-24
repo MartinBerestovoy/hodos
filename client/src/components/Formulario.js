@@ -1,7 +1,8 @@
-import React, { useState } from "react"; // Importa React y el hook useState para manejar el estado
-import axios from "axios"; // Importa Axios para hacer solicitudes HTTP
-import './Formulario.css'; // Importa los estilos CSS específicos para el formulario
-import Navbar from "./Navbar"; // Importa el componente de navegación
+import React, { useState } from "react"; 
+import axios from "axios"; 
+import './Formulario.css'; 
+import Navbar from "./Navbar";
+import { useNavigate } from 'react-router-dom';
 
 // Componente Formulario
 const Formulario = () => {
@@ -184,9 +185,13 @@ const Formulario = () => {
             'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
             'Access-Control-Allow-Credentials': 'false'
           },
-        }
-        
+        } 
       );
+
+      const areaRecomendada = response.data.areaRecomendada || '';
+
+      // navega a la página de universidades con el área recomendada
+      navigate('/universidades', { state: { areaRecomendada } });
      
       // Actualizar los estados para mostrar mensajes de éxito
       setResponseMessage('Formulario enviado exitosamente');
@@ -322,8 +327,6 @@ const Formulario = () => {
           <button type="submit">Enviar</button> {/* Botón para enviar el formulario */}
         </div>
       </form>
-      {responseMessage && <p>{responseMessage}</p>} {/* Muestra el mensaje de respuesta si existe */}
-      {areaRecomendada && <p>Área recomendada: {areaRecomendada}</p>} {/* Muestra el área recomendada si existe */}
     </>
   );
 }
