@@ -202,3 +202,69 @@ app.post('/guardar-porcentaje', save_porcentaje); //llamo a la funcion
     //https://hodos-server.vercel.app//guardar-porcentaje --> ruta
 
 
+
+    //universidades-areas moment
+
+    //tabla universidad --> 
+
+    function save_universidad (req, res) {
+        console.log(req.body);
+        const { id, nombre } = req.body; //nombre tabla 
+    
+        // Realizar la inserción en la base de datos
+        connection.query("INSERT INTO universidades (id, nombre) VALUES ($1, $2)", [id, nombre], (err, result) => {
+            if (err) {
+                console.error("Error al guardar la información:", err);
+                res.status(500).send("Error al guardar la información en la base de datos");
+                return;
+            }
+            console.log("Información guardada correctamente en la base de datos");
+            res.status(200).send("Información guardada correctamente");
+        });
+    
+    
+    };
+    app.post('/guardar-universidad', save_universidad); //llamo a la funcion
+
+    // tabla areas-->
+
+    function save_areas (req, res) {
+        console.log(req.body);
+        const { id, nombre } = req.body; //nombre tabla 
+    
+        // Realizar la inserción en la base de datos
+        connection.query("INSERT INTO areas (id, nombre) VALUES ($1, $2)", [id, nombre], (err, result) => {
+            if (err) {
+                console.error("Error al guardar la información:", err);
+                res.status(500).send("Error al guardar la información en la base de datos");
+                return;
+            }
+            console.log("Información guardada correctamente en la base de datos");
+            res.status(200).send("Información guardada correctamente");
+        });
+    
+    
+    };
+    app.post('/guardar-areas', save_areas); //llamo a la funcion
+
+
+    //tabla area_recomendada-->
+
+    function save_area_recomendada (req, res) {
+        console.log(req.body);
+        const { id, nombre } = req.body; //nombre tabla 
+    
+        // Realizar la inserción en la base de datos
+        connection.query("INSERT INTO area_recomendada (id, id_universidad, id_area) VALUES ($1, $2, 3$)", [id, nombre], (err, result) => {
+            if (err) {
+                console.error("Error al guardar la información:", err);
+                res.status(500).send("Error al guardar la información en la base de datos");
+                return;
+            }
+            console.log("Información guardada correctamente en la base de datos");
+            res.status(200).send("Información guardada correctamente");
+        });
+    
+    
+    };
+    app.post('/guardar-area_recomendada', save_area_recomendada); //llamo a la funcion
