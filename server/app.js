@@ -230,10 +230,10 @@ app.post('/guardar-porcentaje', save_porcentaje); //llamo a la funcion
 
     function save_areas (req, res) {
         console.log(req.body);
-        const { nombre } = req.body; //nombre tabla 
+        const { id, nombre } = req.body; //nombre tabla 
     
         // Realizar la inserción en la base de datos
-        connection.query("INSERT INTO areas (nombre) VALUES ($1)", [nombre], (err, result) => {
+        connection.query("INSERT INTO areas (id, nombre) VALUES ($1, $2)", [id, nombre], (err, result) => {
             if (err) {
                 console.error("Error al guardar la información:", err);
                 res.status(500).send("Error al guardar la información en la base de datos");
