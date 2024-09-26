@@ -252,7 +252,7 @@ app.post('/guardar-porcentaje', save_porcentaje); //llamo a la funcion
 
     function save_area_recomendada (req, res) {
         console.log(req.body);
-        const { id, nombre } = req.body; //nombre tabla 
+        const { id, id_universidad, id_area  } = req.body; //nombre tabla 
     
         // Realizar la inserción en la base de datos
         connection.query("INSERT INTO area_recomendada (id, id_universidad, id_area) VALUES ($1, $2, $3)", [id, id_universidad, id_area], (err, result) => {
