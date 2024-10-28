@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
-import './Testimonios.css'; // Para los estilos
+import './Testimonios.css';
 
 const testimonios = [
   {
     nombre: "Marcelito Perez",
     texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    imagen: "url-de-la-imagen-1",
   },
   {
     nombre: "Ana Martinez",
     texto: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imagen: "url-de-la-imagen-2",
   },
   {
     nombre: "Juan García",
     texto: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    imagen: "url-de-la-imagen-3",
   },
+  {
+    nombre: "Sofia Lopez",
+    texto: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+  {
+    nombre: "Carlos Ramirez",
+    texto: "Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo.",
+  },
+  {
+    nombre: "Mariana Rios",
+    texto: "Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.",
+  }
 ];
 
 const Testimonios = () => {
@@ -34,13 +43,12 @@ const Testimonios = () => {
     <div className="testimonios-container">
       <h2>Testimonios</h2>
       <div className="testimonio">
-        <button onClick={handlePrev} className="flecha izquierda">{"<"}</button>
+        <button onClick={handlePrev} className="flecha izquierda">←</button>
         <div className="testimonio-content">
-          <img src={testimonios[current].imagen} alt={testimonios[current].nombre} className="testimonio-img" />
           <h3>{testimonios[current].nombre}</h3>
           <p>{testimonios[current].texto}</p>
         </div>
-        <button onClick={handleNext} className="flecha derecha">{">"}</button>
+        <button onClick={handleNext} className="flecha derecha">→</button>
       </div>
     </div>
   );

@@ -1,13 +1,73 @@
-<div class="testimonios-container">
-    <h2>Testimonios</h2>
-    <div class="testimonio">
-      <button class="flecha izquierda"><</button>
-      <div class="testimonio-content">
-        <img src="url-de-la-imagen-1" alt="Marcelito Perez" class="testimonio-img" />
-        <h3>Marcelito Perez</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <button class="flecha derecha">></button>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonios</title>
+    <link rel="stylesheet" href="Testimonios.css">
+</head>
+<body>
+    <div class="testimonios-container">
+        <h2>Testimonios</h2>
+        <div class="testimonio">
+            <button class="flecha izquierda">←</button>
+            <div class="testimonio-content">
+                <h3>Marcelito Perez</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <button class="flecha derecha">→</button>
+        </div>
     </div>
-  </div>
-  
+
+    <script>
+        const testimonios = [
+            {
+                nombre: "Marcelito Perez",
+                texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                nombre: "Ana Martinez",
+                texto: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            {
+                nombre: "Juan García",
+                texto: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            },
+            {
+                nombre: "Sofia Lopez",
+                texto: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+                nombre: "Carlos Ramirez",
+                texto: "Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo."
+            },
+            {
+                nombre: "Mariana Rios",
+                texto: "Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo."
+            }
+        ];
+
+        let current = 0;
+
+        const updateTestimonio = () => {
+            const nombreElement = document.querySelector('.testimonio-content h3');
+            const textoElement = document.querySelector('.testimonio-content p');
+            nombreElement.textContent = testimonios[current].nombre;
+            textoElement.textContent = testimonios[current].texto;
+        };
+
+        document.querySelector('.flecha.derecha').addEventListener('click', () => {
+            current = (current + 1) % testimonios.length;
+            updateTestimonio();
+        });
+
+        document.querySelector('.flecha.izquierda').addEventListener('click', () => {
+            current = (current - 1 + testimonios.length) % testimonios.length;
+            updateTestimonio();
+        });
+
+        // Inicializar el primer testimonio
+        updateTestimonio();
+    </script>
+</body>
+</html>
