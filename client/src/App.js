@@ -5,6 +5,8 @@ import Formulario from './Components/Formulario';
 import Prueba from './Components/Prueba';
 import Inicio from './Components/Inicio';
 import Universidades from './Components/Universidades';
+import Testimonios from './Components/Testimonios';
+
 function App() {
   return (
     <Router>
@@ -15,6 +17,7 @@ function App() {
         <Route path="/prueba" element={<Prueba />} />
         <Route path="/inicio" element={<Inicio />} />
         <Route path="/universidades" element={<Universidades />} /> {/* Ruta para la pantalla de universidades */}
+        <Route path="/testimonios" element={<Testimonios />} />
        
       </Routes>
     </Router>

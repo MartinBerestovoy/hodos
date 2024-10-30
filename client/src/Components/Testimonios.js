@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Testimonios.css';
+import Navbar from './Navbar.js';
 
 const testimonios = [
   {
@@ -40,6 +41,8 @@ const Testimonios = () => {
   };
 
   return (
+   <>
+    <Navbar />
     <div className="testimonios-container">
       <h2>Testimonios</h2>
       <div className="testimonio">
@@ -51,6 +54,7 @@ const Testimonios = () => {
         <button onClick={handleNext} className="flecha derecha">→</button>
       </div>
     </div>
+    </>
   );
 };
 
