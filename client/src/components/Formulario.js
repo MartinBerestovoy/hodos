@@ -156,7 +156,7 @@ const Formulario = () => {
   };
 
   // Manejar cambios en los inputs de radio
-  const handleChange = (event) => {
+  const handleChange = (event) => { //TINCHOOOOO
     const { name, value } = event.target; // Extrae el nombre y valor del input
     setFormData({
       ...formData, // Copia el estado actual del formulario
