@@ -11,9 +11,9 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  text-align: auto;
+  text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 350px;
+  height: 340px;
   width: 700px;
   margin-top: 20px;
 }
@@ -43,6 +43,8 @@
 .inicio-box p {
   color: #000000;
   font-size: 20px;
+  text-align: center;
+  align-items: center;
 }
 
 .inicio-box h2 {
