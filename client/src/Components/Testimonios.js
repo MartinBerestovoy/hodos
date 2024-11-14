@@ -12,12 +12,12 @@ const testimonios = [
     texto: "Me llamo Ana Pérez y cursé Psicología en la Universidad de Buenos Aires (UBA) entre 2010 y 2015. La carrera estaba estipulada para ser completada en 5 años, pero me llevó 6. Actualmente trabajo como psicoterapeuta. La experiencia fue intensa y desafiante, pero enriquecedora. Aprender a trabajar con el ser humano en su complejidad fue un camino difícil pero lleno de satisfacciones. Aunque hubo momentos duros, especialmente con la carga horaria y recursos limitados, volvería a elegir esta carrera por todo lo que me brindó y porque me apasiona aún más hoy que cuando estudiaba",
   },
   {
-    nombre: "Juan García",
-    texto: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    nombre: "Juliana Rojas",
+    texto: "Mi nombre es Juliana Rojas y estudié Diseño Gráfico en la Universidad de Belgrano desde 2012 hasta 2017, con un plan estipulado de 5 años que completé a tiempo. Trabajo como Directora de Arte en una agencia de publicidad. La volvería a elegir sin dudas; me enseñó a pensar creativamente y a comunicar visualmente, algo que aplico en todos mis proyectos. La carrera fue intensa y con muchas horas de práctica, pero cada proyecto me formó de una manera única.",
   },
   {
-    nombre: "Sofia Lopez",
-    texto: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    nombre: "Lucas Pérez",
+    texto: "Soy Lucas Pérez y egresé de la carrera de Ciencias Políticas en la Universidad de San Andrés (UDESA) en 2019. La carrera tiene un plan estipulado de 4 años y logré finalizarla en ese tiempo. Actualmente trabajo como Asesor en Políticas Públicas para un organismo internacional. Volvería a elegirla porque la formación interdisciplinaria y el enfoque crítico que adquirí fueron fundamentales para mi desarrollo profesional. Los años de cursada fueron intensos, pero cada debate y proyecto me ayudaron a crecer tanto profesional como personalmente.",
   },
   {
     nombre: "Carlos Ramirez",
