@@ -20,12 +20,12 @@ const testimonios = [
     texto: "Soy Lucas Pérez y egresé de la carrera de Ciencias Políticas en la Universidad de San Andrés (UDESA) en 2019. La carrera tiene un plan estipulado de 4 años y logré finalizarla en ese tiempo. Actualmente trabajo como Asesor en Políticas Públicas para un organismo internacional. Volvería a elegirla porque la formación interdisciplinaria y el enfoque crítico que adquirí fueron fundamentales para mi desarrollo profesional. Los años de cursada fueron intensos, pero cada debate y proyecto me ayudaron a crecer tanto profesional como personalmente.",
   },
   {
-    nombre: "Carlos Ramirez",
-    texto: "Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo.",
+    nombre: "Sofía Álvarez",
+    texto: "Me llamo Sofía Álvarez y estoy cursando la carrera de Economía en la Universidad Torcuato Di Tella. Comencé en 2021 y el plan estipulado para la carrera es de 4 años. Actualmente, me encuentro en mi tercer año, compaginando el estudio con una pasantía en un banco de inversión. Si bien la carrera es exigente, volvería a elegirla sin dudar. La Di Tella me ha desafiado constantemente y me ha dado herramientas que aplico día a día en el análisis de mercados. La exigencia y la calidad académica son incomparables.",
   },
   {
-    nombre: "Mariana Rios",
-    texto: "Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo.",
+    nombre: "Florencia García",
+    texto: "Soy Florencia García y estoy cursando la carrera de Marketing en la Universidad Argentina de la Empresa (UADE). Comencé en 2020 y me encuentro en mi último año de la carrera, que tiene una duración estipulada de 4 años. Actualmente, trabajo como asistente en una agencia de marketing digital, aplicando lo que aprendo en clase a campañas reales y estrategias de comunicación. Volvería a elegir esta carrera y esta universidad sin dudarlo, ya que la formación práctica y actualizada que ofrece UADE me ha permitido adaptarme rápidamente a las necesidades del mercado. El enfoque moderno y el contacto con casos de la vida real han potenciado mi creatividad, habilidades analíticas y capacidad para diseñar estrategias innovadoras en un mundo tan dinámico como el del marketing.",
   }
 ];
 

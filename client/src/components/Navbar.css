@@ -22,6 +22,7 @@
     color: black; /* Cambia el color a negro o el que prefieras para que no parezca un enlace */
     border-radius: 5px;
     cursor: default; /* Cambia el cursor a default para que no parezca interactivo */
+    text-decoration: none;
 }
 
 .menu-item:hover {
