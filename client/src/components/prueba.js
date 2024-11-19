@@ -73,11 +73,11 @@ const Prueba = () => { // Define el componente funcional Prueba
           <div className="card">
             <div className="card-content">
             <img className="icon" src="/Nombres3.jpg" alt="Fernanda Cabalen" />
-              <p className="profile-name">Lic. Fernanda Cabalen</p>
+              <p className="profile-name">Lic. Carolina Morvillo</p>
             </div>
             <div className="card-content">
             <img className="icon" src="/Nombres4.jpg" alt="Hernan Caruso" />
-              <p className="profile-name">Lic. Hernan Caruso</p>
+              <p className="profile-name">Lic. Julian Morvillo</p>
             </div>
           </div>
         </div>

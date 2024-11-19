@@ -15,7 +15,7 @@ function Navbar() {
       <span className="menu-item">Areas de Interes</span>
       <Link to="/Testimonios" className="menu-item">Testimonios de carreras</Link>
       <button class="navbar-toggle">
-        <span class="navbar-toggle-icon">&#9776;</span>
+      <Link to="/Prueba" class="navbar-toggle-icon">&#9776;</Link>
       </button>
     </div>
     </nav>
